@@ -1,0 +1,505 @@
+% Bibliography — The Sigma Architecture (#1215)
+% Grouped by role in the paper. Keys: firstauthorYEARkeyword.
+% TODO markers = entry needs verification before submission.
+
+% ---------------------------------------------------------------
+% Contemporary agent-collaboration work (the conversation we join)
+% ---------------------------------------------------------------
+
+@misc{liu2026multiagentcollaborationstatemanagement,
+      title={Multi-agent Collaboration with State Management},
+      author={Mengyang Liu and Taozhi Chen and Zhenhua Xu and Xue Jiang and Yihong Dong},
+      year={2026},
+      eprint={2605.20563},
+      archivePrefix={arXiv},
+      primaryClass={cs.MA},
+      url={https://arxiv.org/abs/2605.20563},
+      notes={STORM manages agent states by mediating their interactions with the shared workspace, ensuring that each agent operates on a consistent view of the codebase and that conflicting edits are detected and resolved at write time. STORM outperforms the git-worktree-based multi-agent baseline...},
+}
+
+@misc{khan2025gossipenhancedcommunicationsubstrateagentic,
+      title={A Gossip-Enhanced Communication Substrate for Agentic AI: Toward Decentralized Coordination in Large-Scale Multi-Agent Systems},
+      author={Nafiul I. Khan and Mansura Habiba and Rafflesia Khan},
+      year={2025},
+      eprint={2512.03285},
+      archivePrefix={arXiv},
+      primaryClass={cs.MA},
+      url={https://arxiv.org/abs/2512.03285},
+      note={Position paper, no implementation. Gossip carries beliefs, never artifacts; names the provenance gap and leaves it open; staleness global, never per-reader. Cite in §6 as convergence evidence; their hybrid deterministic-stochastic future direction is Sigma-shaped with the deterministic half unspecified},
+}
+
+@misc{rodrigues2026hallucinationcontextdriftsynchronization,
+      title={Hallucination as Context Drift: Synchronization Protocols for Multi-Agent LLM Systems},
+      author={Carson Rodrigues},
+      year={2026},
+      eprint={2606.21666},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2606.21666},
+      note={Empirical: hallucination reframed as stale shared state — the lookback's failure mode, measured. Full-broadcast sync INCREASES hallucination 34\% (contamination) — evidence for scoped views over hand-everyone-everything (§3.4) and for gating unendorsed agent state. Their CDS is a soft pairwise debt metric; SSVP a statistical stand-in for hwm/ack. Cite in §3.3 (stakes), §3.4 (contamination), §6 (convergence)},
+}
+
+@misc{volkov2026statefusedeterministicconflictpreservingmemory,
+      title={StateFuse: Deterministic Conflict-Preserving Memory for Multi-Agent Systems},
+      author={Sergey Volkov and Yang Li and Ye Luo},
+      year={2026},
+      eprint={2607.05844},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2607.05844},
+      note={Implemented + evaluated. OpSet CRDT (union merge, SEC intact) + an agent-facing contract: conflicts as first-class ConflictSet objects; resolution at projection time only, never mutating replicated state; decisions append-only but UNATTRIBUTED; no basis, no reader currency, no branch attribution. Vindicates the critique's direction (the CRDT side abandoning silent dissolution) without supplying the obligation layer. Key number: collapsed surfaces gave 40\% false-confident actions vs 0\% conflict-preserving — silent corruption manifests in ACTION, not QA accuracy (LWW wins raw QA on their slice; cite carefully). Place: CRDT paragraph (concession update), §5.3 boundary 2, §6 convergence},
+}
+
+@misc{wu2026gitcontextcontrollermanage,
+      title={Git Context Controller: Manage the Context of LLM-based Agents like Git},
+      author={Junde Wu and Minhao Hu and Jiayuan Zhu and Jiazhen Pan and Yuyuan Liu and Min Xu and Yueming Jin},
+      year={2026},
+      eprint={2508.00031},
+      archivePrefix={arXiv},
+      primaryClass={cs.SE},
+      url={https://arxiv.org/abs/2508.00031},
+      note={System paper, strong numbers (SWE-Bench Verified 80.2\%) — the one to distinguish by name. Versions ONE agent's private context (.GCC/ file tree; COMMIT/BRANCH/MERGE/CONTEXT verbs); "merge" is LLM synthesis — no ancestor, no basis, no conflict surfacing; "multi-agent" = sequential handoff, concurrency punted silently; no currency, no audiences, provenance as prose for the LLM, not machinery. The git METAPHOR for context compaction vs Sigma's git MECHANICS for shared truth. Place: §5.1 duct-tape exhibit (strongest — git vocabulary adopted wholesale), §4.2 (handoff without basis: the resumed agent inherits notes, not currency), §6 convergence},
+}
+
+@misc{li2026securityconsiderationsartificialintelligence,
+      title={Security Considerations for Artificial Intelligence Agents},
+      author={Ninghui Li and Kaiyuan Zhang and Kyle Polley and Jerry Ma},
+      year={2026},
+      eprint={2603.12230},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2603.12230},
+      note={Framework paper (Perplexity's NIST RFI response; no experiments). GIFTS: names the attribution gap unsolved (provenance contract fills it, §3.9); calls for a deterministic enforcement layer + complete mediation (the mount IS one, §3.4); lists exfiltration via "workspace files, memory entries" (§3.4 answers); names rubber-stamping (their risk-adaptive remedy = our blast-radius heuristic, §4.4); their stale-state-replay threat is structurally answered by basis-checked writes (§3.6); versioning/rollback absent from their framework entirely. PUNCHES to absorb: (1) mounted-but-poisoned — views bound reach, not rhetoric; injection inside a legitimate view is model-layer, don't overclaim §3.4; (2) delegation CHAINS (user-agent-subagent) may exceed a two-field principal/actor stamp; (3) per-mount policy manageability at scale — answer is templates/roles. Place: §3.4, §3.9, §4.4, §6 (fifth convergence pole: security)},
+}
+
+@misc{salemi2026llmbasedmultiagentblackboardinformation,
+      title={LLM-Based Multi-Agent Blackboard System for Information Discovery in Data Science},
+      author={Alireza Salemi and Mihir Parmar and Palash Goyal and Yiwen Song and Jinsung Yoon and Hamed Zamani and Tomas Pfister and Hamid Palangi},
+      year={2026},
+      eprint={2510.01285},
+      archivePrefix={arXiv},
+      primaryClass={cs.MA},
+      url={https://arxiv.org/abs/2510.01285},
+      note={Implemented + evaluated (UMass/Google; beats master-slave on 3 benchmarks). The revival is even LESS shared-artifact than Hearsay-II: board β carries only the main agent's help requests; helpers reply on a segregated board βᵣ they cannot see each other on — "to avoid dependencies where one sub-agent's output could influence the behavior of others negatively." Divergence prevented by ISOLATION, not turn-taking; no history, no versioning, no jointly-authored artifact; attribution unused. Contribution is capability routing, orthogonal to our point. Cite carefully in §1: coordination-by-isolation, and it strengthens the trends-toward-VCS claim (adds neither history nor lineage). Pairs with rodrigues2026: broadcast contaminates (+34\%), so they isolate entirely — the two naive poles; Sigma's gates/endorsement keep sharing without contamination},
+}
+
+@misc{shahid2026collaborativehumanagentprotocolchap,
+      title={Collaborative Human-Agent Protocol (CHAP)},
+      author={Arsalan Shahid and Gordon Suttie and Philip Black},
+      year={2026},
+      eprint={2606.09751},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2606.09751},
+      note={Nearest neighbor — on the accountability axis. Industry protocol spec (Brightbeam AI, v0.2 draft, two reference impls, conformance harness). Event-sourced evidence log + task lifecycle + review/override through a central Coordinator. Claims our layer BY NAME ("neither MCP nor A2A defines the shared workspace in which humans and agents perform accountable work") then builds the audit half, not the state half: "merge/branch/fork/concurrent/stale" never appear; no scoped views, no currency, no principal/actor split; their named open problems (selective disclosure, parent-child workspaces) are our constraints 1-2 and fork topology. Machinery worth learning from: shadow/trial/production mode ladder (richer trust vocabulary than binary gates), typed abstention, intent_preserved flags, SCITT receipts (external verifiability — answers the substrate-trust punch from li2026security). Composable: CHAP over a Sigma substrate = audit layer over state layer. Pocket: CHAP audits the workflow around the work; Sigma versions the work itself. Place: distinguish-by-name in §5 alongside GCC; §4.4 gates; §6 convergence},
+}
+
+@misc{legit2026,
+      title={Legit: A Git-based Version Control System for AI Agents},
+      author={Nils Jacobsen and Martin Lysk and Jannes Blobel},
+      year={2026},
+      howpublished={Software, Legit-Control monorepo (Apache-2.0); npm @legit-sdk/core},
+      url={https://github.com/Legit-Control/monorepo},
+      note={Startup pole of the convergence (3-person team, ~17k LOC TS, real but early). Virtual FS over embedded git; every write a commit; full .legit/ control-file grammar (mkdir = branch, write SHA to .legit/head = rollback) — independent validation of verbs-as-file-writes (#1217, §3.2). Standout mechanism: DUAL-PARENT OPERATION COMMITS — agent intent recorded as a commit whose second parent is the content state it acted against; a basis pointer in vanilla git plumbing. Their own framing names constraint 5: "Git is blind to reads... coordination requires knowing what was read, in which state, under what assumptions" — claimed as differentiator, NOT implemented (no read tracking, no boundaries, no adjudication; hub aspirational). Scored: ~3 of 6 constraints as stated goals, ~1.5 shipped. Cite: §6 convergence; the blind-to-reads line as external articulation of reader currency's necessity},
+}
+
+@misc{joshi2026deonticpoliciesruntimegovernance,
+      title={Deontic Policies for Runtime Governance of Agentic AI Systems},
+      author={Anupam Joshi and Tim Finin and Karuna Pande Joshi and Lalana Kagal},
+      year={2026},
+      eprint={2606.19464},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2606.19464},
+      note={The theory pole — AgenticRei: Kagal's Rei re-aimed at LLM agents (IEEE Agentic Services 2026; RDFox prototype, <10ms; eval thin). Four modalities: permission, prohibition, obligation (fires BECAUSE an action was permitted — our gate-after exactly), dispensation, + governable meta-policies. Their P3 is structurally our pre-push gate (prohibition lifted by credentialed permission). VOCABULARY GIFTS: "dispensation" names our silent-observe policy (a standing excusal from acknowledgment); governable meta-policies name who-may-change-write-policy. THEIR ADMITTED GAPS ARE OUR SHIPPED MACHINERY: obligation discharge is behaviorally monitored (deadline callbacks, trusted agents) — no per-actor ledger, no structural check; obligations bind only the actor ("every reader owes acknowledgment" has no Rei expression); enforcement object is an action triple, never an artifact/diff. Synthesis: AgenticRei is the policy calculus without the enforcement object; Sigma is the enforcement object without the policy calculus — they compose. Also: UMBC/MIT authors = candidate reviewers/collaborators for the arXiv push. Place: §4.4 (gates formalized), annex A.7, §6},
+}
+
+@misc{sure2026agl1enterpriseaigovernance,
+      title={AGL-1: The Enterprise AI Governance Layer as a Control Plane for Trusted Enterprise Intelligence},
+      author={Roopam W. Sure},
+      year={2026},
+      eprint={2607.03516},
+      archivePrefix={arXiv},
+      primaryClass={cs.SE},
+      url={https://arxiv.org/abs/2607.03516},
+      note={Solo-authored independent technical report (no implementation, no evaluation; references mostly vendor docs) — cite as problem framing only, and lightly. Governs the inference/action path at gateway seams: per-tool-call interception, "before/during/after execution" policy placement — but policy sees an INTENT, not a changeset: no diff, no basis, no artifact at the enforcement point, and post-execution is evidence-only (no debt, no acknowledgment obligation). Risk tiers attach to assets, not writers; approval is an evidence field, not a designed interaction; rubber-stamping unaddressed. Validates: trust as "a property of the system around the model"; authorization "at the retrieval, memory, tool, and agent-action layers." Useful vocabulary: failure taxonomy separating system failures from model failures (stale grounding, unmanaged memory, weak provenance — the constraints again); evidence-artifact catalog. Pairs with li2026security as the demand side: governance keeps specifying gate positions with nothing diff-shaped standing at them — the write boundary supplies the missing object},
+}
+
+@misc{liu2026filesallyouneed,
+      title={Files Are All You Need},
+      author={Jerry Liu},
+      year={2026},
+      month={jan},
+      howpublished={LlamaIndex blog},
+      url={https://www.llamaindex.ai/blog/files-are-all-you-need},
+      note={Cited in §3.2; the paper's rejoinder is "you need files"},
+}
+
+@misc{he2026replicatingbeliefbitsepistemic,
+      title={Replicating Belief, Not Bits: Epistemic State Replication for Agentic Systems},
+      author={He, Jun and Yu, Deying},
+      year={2026},
+      eprint={2607.09748},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2607.09748},
+      note={Deep-read 2026-07-16 (subagent). Closest epistemic sibling: same diagnosis
+            (bits != belief; CRDTs "lack semantic awareness"; conflicts surface explicitly
+            with causal metadata), inverted prescription (verifier-mediated convergence of
+            same-role replicas to an epsilon-ball vs. Sigma's attributed non-convergence
+            across audiences). Mechanics: K=(L,B) evidence log (Raft-replicated) + belief
+            lineage DAG; beliefs (phi, J, tau) with justification sets; semantic
+            linearizability + bounded eventual coherence via contractive graft — an
+            assumption the authors themselves flag as "strong." Cite in: 5.3.2 (MANDATORY —
+            prior art for the CRDT semantic-blindness critique); basis 3.6 (justification
+            sets = belief-grained provenance, but staleness is fault class f_stale, healed
+            not refused: lineage present, transaction absent at the belief grain); consensus
+            5.3.3 (semantic quorum = consensus over meaning projections; sharpens
+            concurrence boundary); one-liners for currency 3.8 (fair-delivery assumption,
+            no ledger) and N=1 4.2 (replicated-N=1: many copies, one mind). Annex A.5.
+            CAUTION: v1 industry preprint (OpenKedge.io), un-peer-reviewed, self-cites own
+            manifesto; ALL numbers (4.8x CTPS, ~97.7 percent secondary-fault reduction) from
+            ONE unarchived illustrative trace — authors say not experimental validation;
+            never cite figures without that caveat. No AGM or VCS engagement despite
+            belief-revision and git-shaped machinery.},
+}
+
+% ---------------------------------------------------------------
+% Foils (§3.3, §5.2 matrix rows)
+% ---------------------------------------------------------------
+
+@inproceedings{shapiro2011crdt,
+      title={Conflict-free Replicated Data Types},
+      author={Shapiro, Marc and Pregui{\c{c}}a, Nuno and Baquero, Carlos and Zawirski, Marek},
+      booktitle={Stabilization, Safety, and Security of Distributed Systems (SSS 2011)},
+      series={LNCS},
+      volume={6976},
+      pages={386--400},
+      publisher={Springer},
+      year={2011},
+}
+
+@techreport{shapiro2011comprehensive,
+      title={A Comprehensive Study of Convergent and Commutative Replicated Data Types},
+      author={Shapiro, Marc and Pregui{\c{c}}a, Nuno and Baquero, Carlos and Zawirski, Marek},
+      institution={INRIA},
+      number={RR-7506},
+      year={2011},
+}
+
+@inproceedings{kleppmann2019localfirst,
+      title={Local-first Software: You Own Your Data, in Spite of the Cloud},
+      author={Kleppmann, Martin and Wiggins, Adam and van Hardenberg, Peter and McGranaghan, Mark},
+      booktitle={Proceedings of the 2019 ACM SIGPLAN International Symposium on New Ideas, New Paradigms, and Reflections on Programming and Software (Onward!)},
+      pages={154--178},
+      year={2019},
+}
+
+@misc{moment2024lies1,
+      title={Lies I was Told About Collaborative Editing, Part 1: Algorithms for Offline Editing},
+      author={{Moment Engineering}},
+      year={2024},
+      howpublished={Moment devlog},
+      url={https://www.moment.dev/blog/lies-i-was-told-pt-1},
+      note={TODO: confirm individual author name for formal citation},
+}
+
+@misc{moment2026lies2,
+      title={Lies I was Told About Collaborative Editing, Part 2: Why We Don't Use Yjs},
+      author={{Moment Engineering}},
+      year={2026},
+      howpublished={Moment devlog},
+      url={https://www.moment.dev/blog/lies-i-was-told-pt-2},
+      note={TODO: confirm individual author name; source of the silent-corruption framing},
+}
+
+@misc{hofbauer2023largescalecollaborativewritingtechnical,
+      title={Large-Scale Collaborative Writing: Technical Challenges and Recommendations},
+      author={Markus Hofbauer and Christoph Bachhuber and Christopher Kuhn and Sebastian Schwarz and Bart Kroon and Eckehard Steinbach},
+      year={2023},
+      eprint={2303.09933},
+      archivePrefix={arXiv},
+      primaryClass={cs.HC},
+      url={https://arxiv.org/abs/2303.09933},
+}
+
+@article{erman1980hearsay,
+      title={The Hearsay-II Speech-Understanding System: Integrating Knowledge to Resolve Uncertainty},
+      author={Erman, Lee D. and Hayes-Roth, Frederick and Lesser, Victor R. and Reddy, D. Raj},
+      journal={ACM Computing Surveys},
+      volume={12},
+      number={2},
+      pages={213--253},
+      year={1980},
+      note={Blackboard systems: collaboration through synchronized coordination (§1)},
+}
+
+@article{nii1986blackboard,
+      title={The Blackboard Model of Problem Solving and the Evolution of Blackboard Architectures},
+      author={Nii, H. Penny},
+      journal={AI Magazine},
+      volume={7},
+      number={2},
+      pages={38--53},
+      year={1986},
+}
+
+% ---------------------------------------------------------------
+% Collaboration failure modes (position paper §2–3 summands)
+% ---------------------------------------------------------------
+
+@article{grinter2003recomposition,
+      title={Recomposition: Coordinating a Web of Software Dependencies},
+      author={Grinter, Rebecca E.},
+      journal={Computer Supported Cooperative Work (CSCW)},
+      volume={12},
+      pages={297--327},
+      year={2003},
+      note={Verified against PDF 2026-07-27. Ethnography (PARC; Tool/Comms/Computer Corp).
+            Recomposition = "the work necessary to ensure that a software product can be
+            assembled from its component pieces"; concept coined Grinter 1998. Key moves:
+            Parnas promised decomposition would reduce communication; the field kept the
+            technical half and lost the division-of-labor half. Dependencies arise four ways
+            (designed-in, incomplete decomposability, legacy, requirements drift) and EVOLVE,
+            so "decomposition may occur once... recomposition occurs throughout." CM tools
+            "ameliorate some" needs but don't scale across subsystems — people fill the gap
+            with informal roles. Position paper: the recomposability summand; also prior art
+            for "the substrate ships bare, upper layers absorb the load".},
+}
+
+@inproceedings{herbsleb2001distance,
+      title={An Empirical Study of Global Software Development: Distance and Speed},
+      author={Herbsleb, James D. and Mockus, Audris and Finholt, Thomas A. and Grinter, Rebecca E.},
+      booktitle={Proceedings of the 23rd International Conference on Software Engineering (ICSE 2001)},
+      pages={81--90},
+      year={2001},
+      note={Lucent change-management data (modification requests). Cross-site work items
+            ~2.5x slower than same-site; delay driven by headcount pulled in and the
+            breakdown of informal communication channels, not timezone mechanics. Sibling:
+            Herbsleb et al. CSCW 2000 (Distance, Dependencies, and Delay) puts it near 3x —
+            the figure grinter2003recomposition quotes. Position paper: recomposability
+            summand ("first casualty of distance"); the informal-channel-breakdown mechanism
+            is what the currency ledger formalizes.},
+}
+
+@inproceedings{dourish1992awareness,
+      title={Awareness and Coordination in Shared Workspaces},
+      author={Dourish, Paul and Bellotti, Victoria},
+      booktitle={Proceedings of the 1992 ACM Conference on Computer-Supported Cooperative Work (CSCW '92)},
+      pages={107--114},
+      year={1992},
+      note={Source of the awareness definition quoted in position paper §2: "an
+            understanding of the activities of others, which provides a context for your
+            own activity." Argues awareness should be carried passively by the shared
+            workspace itself rather than by explicit notification — the substrate as
+            engineered periphery; direct ancestor of debt/currency served through the view.},
+}
+
+@incollection{clark1991grounding,
+      title={Grounding in Communication},
+      author={Clark, Herbert H. and Brennan, Susan E.},
+      booktitle={Perspectives on Socially Shared Cognition},
+      editor={Resnick, Lauren B. and Levine, John M. and Teasley, Stephanie D.},
+      publisher={American Psychological Association},
+      pages={127--149},
+      year={1991},
+      note={Common ground must be continually established and repaired (grounding); the
+            costs of grounding shift with the medium. Position paper: the grounded-premises
+            summand — false common ground as its failure mode.},
+}
+
+% ---------------------------------------------------------------
+% Lineage — the column champions (§5.1, §5.2)
+% ---------------------------------------------------------------
+
+@article{pike1993namespaces,
+      title={The Use of Name Spaces in Plan 9},
+      author={Pike, Rob and Presotto, Dave and Thompson, Ken and Trickey, Howard and Winterbottom, Phil},
+      journal={ACM SIGOPS Operating Systems Review},
+      volume={27},
+      number={2},
+      pages={72--76},
+      year={1993},
+      note={"Everybody gets the right namespace" (§3.4)},
+}
+
+@misc{kreps2013log,
+      title={The Log: What Every Software Engineer Should Know About Real-time Data's Unifying Abstraction},
+      author={Kreps, Jay},
+      year={2013},
+      howpublished={LinkedIn Engineering blog},
+      url={https://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying},
+      note={Consumer offsets as the reader-currency lineage (§3.8, §5.1)},
+}
+
+@misc{jujutsu,
+      title={Jujutsu: A Git-compatible VCS with First-class Conflicts},
+      author={von Zweigbergk, Martin and contributors},
+      howpublished={Software},
+      url={https://github.com/jj-vcs/jj},
+      note={Strongest durable-divergence story in the VCS family (§5.2)},
+}
+
+@misc{gerrit,
+      title={Gerrit Code Review},
+      author={{Google and contributors}},
+      howpublished={Software},
+      url={https://www.gerritcodereview.com/},
+      note={Endorsement-with-basis: approvals stale on new patchsets (§5.2)},
+}
+
+@misc{automerge,
+      title={Automerge: A JSON-like CRDT Library},
+      author={{Ink \& Switch and contributors}},
+      howpublished={Software},
+      url={https://automerge.org/},
+}
+
+% TODO: Perforce client views / protections / streams — cite product docs
+%       (strongest prior art on scoped views; §5.2 have-list footnote).
+% TODO: Dolt or similar versioned-database citation for footnote 1
+%       (rows-consuming Sigma coherence).
+% TODO: ElectricSQL and Jazz citations (§5.1 "the market feels the gap").
+
+% ---------------------------------------------------------------
+% Style precedents (pattern-extraction and register)
+% ---------------------------------------------------------------
+
+@phdthesis{fielding2000rest,
+      title={Architectural Styles and the Design of Network-based Software Architectures},
+      author={Fielding, Roy Thomas},
+      school={University of California, Irvine},
+      year={2000},
+      note={The style-extracted-from-a-working-instance precedent (§5.2: "Sigma is to the forge what REST was to HTTP")},
+}
+
+@book{brooks1975mythical,
+      title={The Mythical Man-Month: Essays on Software Engineering},
+      author={Brooks, Frederick P., Jr.},
+      publisher={Addison-Wesley},
+      year={1975},
+      note={Cited 5.4.2: the n(n-1)/2 communication-path quadratic charged against growing
+            teams — the scale limit Sigma inherits rather than creates. The pattern's add:
+            the cost is measurable (books) and partitionable (audience topology; splitting
+            the team is a first-class operation).},
+}
+
+
+@inproceedings{ongaro2014raft,
+      title={In Search of an Understandable Consensus Algorithm},
+      author={Ongaro, Diego and Ousterhout, John},
+      booktitle={2014 USENIX Annual Technical Conference (USENIX ATC 14)},
+      pages={305--319},
+      year={2014},
+}
+
+@misc{boner2014reactive,
+      title={The Reactive Manifesto, v2.0},
+      author={Bon{\'e}r, Jonas and Farley, Dave and Kuhn, Roland and Thompson, Martin},
+      year={2014},
+      url={https://www.reactivemanifesto.org/},
+      note={"A reactive system is message-driven; a reactive reasoner is basis-driven" (§4.2)},
+}
+
+% ---------------------------------------------------------------
+% Philosophical ground (hermeneutic flank; §6 future work, §7)
+% ---------------------------------------------------------------
+
+@book{winograd1986understanding,
+      title={Understanding Computers and Cognition: A New Foundation for Design},
+      author={Winograd, Terry and Flores, Fernando},
+      publisher={Ablex Publishing / Addison-Wesley},
+      year={1986},
+      note={Read 2026-07-16 (background survey, not deep-read). Three load-bearing borrowings:
+            (1) BREAKDOWN (via Heidegger): tools are transparent in use and become explicit
+            objects only when they stop serving; good design reveals breakdowns early and
+            productively. Cited in §7 — a refused push is an engineered breakdown: the delta
+            served at the cheapest useful moment. A silent merge is a concealed breakdown.
+            (2) THE BACKGROUND: meaning arises against unformalizable shared practice; no
+            schema captures context. This is the ground for the paper's own no-guarantee
+            claim (coherence judged, never computed) — cited as ally at the claim boundary,
+            not answered as attack. Reviewers deploying W&F against Sigma hit only systems
+            that claim to compute coherence; the paper renounces exactly that.
+            (3) CONVERSATIONS-FOR-ACTION: their speech-act workflow system (The Coordinator)
+            is the ancestor of commitment-typed channels (§6 future work).},
+}
+
+@book{searle1969speechacts,
+      title={Speech Acts: An Essay in the Philosophy of Language},
+      author={Searle, John R.},
+      publisher={Cambridge University Press},
+      year={1969},
+      note={Cited in §6 future work: typing the proposal/annotation channels by illocutionary
+            force (request, assertion, declaration) — a proposal is a request for commitment,
+            an acceptance a declaration. Route into system design runs through
+            winograd1986understanding.},
+}
+
+@misc{defradb,
+      title={DefraDB: A Peer-to-Peer Edge Database Built on Merkle CRDTs},
+      author={{Source Network}},
+      url={https://source.network/defradb},
+      note={Docs survey 2026-07-16, via external reviewer pointer. Infrastructure pole of
+            conflict-preserving CRDTs: IPLD Merkle-DAG operation logs, multi-value registers
+            preserving divergent branches, offline-first P2P sync. Named in whitepaper
+            5.3.2 (multiverse family) and annex A.4. Verdict: lineage present, transaction
+            absent — ancestry recoverable, nothing consults it at admission, resolution
+            "when convenient." P2P replicate-everything conflicts with audience-scoped
+            truth; keypair identity is not a principal/actor contract.},
+}
+
+@book{huberman1988ecology,
+      editor={Huberman, Bernardo A.},
+      title={The Ecology of Computation},
+      publisher={North-Holland},
+      year={1988},
+      note={Sushil review pt. 1 (2026-08-04). Open-systems lineage: computational ecologies
+            of autonomous, partially informed processes; includes Miller & Drexler's agoric
+            (market-based coordination) papers. Sigma shares the domain and the actors,
+            swaps market coordination for adjudicated shared truth — actors negotiate
+            meaning, not allocation.},
+}
+
+@book{hanson2021flexibility,
+      author={Hanson, Chris and Sussman, Gerald Jay},
+      title={Software Design for Flexibility: How to Avoid Programming Yourself into a Corner},
+      publisher={MIT Press},
+      year={2021},
+      note={Sushil review pts. 3/6 (2026-08-04). Ch. 9 propagators: cells accumulate
+            supported values with provenance; contradictions trace to premises. In Sigma:
+            a candidate discharge standard — a gate referee where content formalizes
+            (§3.7 obligation-vs-discharge split) — never the substrate guarantee.},
+}
+
+@misc{cloudflareos2026,
+      title={Cloudflare OS: An AI Agent and Workspace for Every Employee},
+      author={{Cloudflare}},
+      year={2026},
+      url={https://blog.cloudflare.com/cloudflare-os/},
+      note={Blog survey 2026-08-07. Second industry co-genesis point after Buzz, from the
+            security side. Headline mechanism: observation provenance — every resource an
+            agent has seen is recorded, stays attached to derived artifacts, and gates both
+            onward sharing (viewer checked against underlying observed resources) and
+            outbound action. A basis record serving flow-control verdicts where Sigma serves
+            premise verdicts. Corroborates the capabilities fold: agents start at zero
+            access, resources arrive as typed capability bindings, ocap RPC (Cap'n Web),
+            no ambient authority. Gatekeepers = gates + boundaries at the service seam.
+            Stops short of coherence books: collaboration is live shared state or a
+            blueprint copy — no basis-carried writes, no adjudication, no currency ledger.},
+}
+
+@misc{lettacontextrepos2026,
+      title={Context Repositories: Git-Based Memory for Agents},
+      author={{Letta}},
+      year={2026},
+      url={https://www.letta.com/blog/context-repositories/},
+      note={Blog survey 2026-08-08 (post of 2026-02-12). Third co-genesis point, from the
+            memory side: agent memory rebuilt as a git repository — every change versioned,
+            filetree as progressive disclosure, subagent "memory swarms" writing
+            concurrently in isolated worktrees and merging back. Independently rediscovers
+            trunk + branch + workspace for N=1 memory, and validates the training-priors
+            bet: plain files and git verbs are the interface agents already know. Stops
+            exactly where Sigma begins: reconciliation is git conflict resolution — line
+            grain, no basis, no premise check — and single-tenant, so no audiences, books,
+            or standing.},
+}
