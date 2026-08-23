@@ -22,7 +22,7 @@ That synchronization loop is dead while humans and agents are contributing to sh
 
 Sigma aims squarely at the problem of evolving shared-work of semi- and barely-structured sorts, where context is precious, the external world is evolving, inter-actor collaboration is a structured contract, and visibility of information is role-based. The sections below set out what collaboration means here, the criterion success is measured against, and the forces the domain imposes on the response.
 
-What follows is a **pattern** in Alexander's sense (1979): forces, and a resolution judged by how it holds them. The claim is that six constraints, held together, resolve the seven forces of §1.4, and that removing any one collapses a capability the rest depend on (§1.6, §5.2). Three things are not claimed:
+What follows is a **pattern** in Alexander's sense (1979): forces, and a resolution judged by how it holds them. The claim is that six constraints, held together, resolve the seven forces of §1.4, and that removing any one collapses a capability the rest depend on (§5.1). Three things are not claimed:
 - coherence itself, which is assessed and never computed (§1.2);
 - novel primitives, since every element has a well-worn precedent and the argument is about their composition (§1.6); and
 - measurement, which does not apply to a pattern; instead we point to fitness of our implementation to different problems. There are lessons rather than metrics (§5.3).
@@ -151,17 +151,13 @@ Shared work is not new, and every medium in use today answers part of this. None
 
 ### **1.5.1 Shared editors and version control**
 
-The **shared editor** — Docs, and the OT/CRDT family beneath it — addresses mutual awareness and timely reckoning outright, and does it better than anything else here: every keystroke is visible as it lands, to everyone, immediately. That is the capacity pair the rest of this section struggles with, solved at human pace and solved well.
+The **shared editor** — Docs, and the OT/CRDT family beneath it — addresses mutual awareness and timely reckoning outright, and better than anything else here: every keystroke is visible as it lands, to everyone, or in local-first designs, these are algorithmically merged at a later time; although here is a gap: asynchronous awareness is unaddressed, and merging in this fashion is not without hazard, even when divergence is preserved (§5.4.1).
 
-It leaves open the two that are about the work. Grounding is absent because no contribution ever names what it was made from; the document simply *is* its latest state. Recomposing is defeated by its own success — merge is automatic and total at the character grain, so no divergence is ever presented to anyone, and two passages that never touched can contradict each other with nothing to report it. Attributed judgment exists optionally and coarsely: suggest-mode is a gate and version history is a record, each over a whole document, each switched on by convention. And the guarantees stop at the document boundary; a second document is a second world.
-
-**Version control** — git and its kin — is the real substrate contribution in this list, and its shape is the inverse. It addresses grounding exactly: every commit names the state it was made from, durably and by construction, which is the one thing the editor cannot do. It addresses recomposing through the three-way merge, which surfaces divergence rather than dissolving it, and hands the judgment to a person.
-
-What it leaves open, it leaves open by design. There is no audience — a repository is one visibility, and inside it everyone sees everything. There is no reader — nothing durable records that anyone looked at anything, so mutual awareness and timely reckoning have nowhere to live. There is no gate; a bare repository accepts what is pushed. These are not oversights but the boundary of a tool that was built to track content, and they are precisely what the layer above it exists to supply.
+**Version control** — git and its kin — is the real substrate contribution in this list, and its shape is the inverse. It addresses grounding exactly: every commit names the state it was made from, durably and by construction, which is the one thing the editor cannot do. It addresses recomposing through the three-way merge, which surfaces divergence rather than dissolving it, and hands the judgment to a person. What it leaves open, it leaves open by design, and it is left to the layer above it to address: the forge.
 
 ### **1.5.2 The forge**
 
-The forge — git + GitHub and kin — is easily recognized medium. It supports five of the seven capacities outright: grounding in the parent pointer, recomposing by three-way merge with a compiler for a referee, attributed judgment at review, rules of engagement in protected branches and code owners, accountability in blame and the fork-propose-maintain ladder. It fails two capacities: mutual awareness and timely reckoning (§1.2), because **the forge is a writer's system**, and no reader state exists at all. Nothing durable records that anyone read anything; `git log @{1}..` is local. Timely reckoning has no clock on it. Boundaries stop at the repository: inside one, everyone sees everything. Further, the forge is an artifact, built, not a pattern.
+The forge — git + GitHub and kin – supports five of the seven capacities outright: grounding in the parent pointer, recomposing by three-way merge with a compiler for a referee, attributed judgment at review, rules of engagement in protected branches and code owners, accountability in blame and the fork-propose-maintain ladder. It fails two capacities: mutual awareness and timely reckoning (§1.2), because **the forge is a writer's system**, and no reader state exists at all. Nothing durable records that anyone read anything; `git log @{1}..` is local. Timely reckoning has no clock on it. Boundaries stop at the repository: inside one, everyone sees everything. Further, the forge is an artifact, built, not a pattern.
 
 The forge's acknowledged strengths are why Sigma's vocabulary rhymes with the forge deliberately, and draws on its writer-side wholesale. As a pattern, Sigma points to *how to balance the forces of collaboration*, without committing to an exact domain subject.
 
@@ -185,19 +181,17 @@ This is an active space, and the spate of resonating entrants points to Sigma's 
 
 Each reaches for version control. Buzz integrates a forge. Delta requires the project to be a git repository and leaves commits in git, moving them between machines itself. Cloudflare OS keeps code as real git objects — expressly so that agents may later mount arbitrary repositories with the same tools.
 
-Independent teams arriving at content-addressed history as the foundation under human-agent work.
+Independent teams arriving at content-addressed history as the foundation under human-agent work, and each point to future work. This is a gap unfilled across the bleeding edges of version control, storage, and orchestration.
 
 ## **1.6 What is new**
 
-This is a gap unfilled across the bleeding edges of version control, synchronization, storage, and orchestration. As such, Sigma represents novel art — narrow in what it invents and broad in what it applies to: any reasoning actor working with others, or against a moving world.
+Sigma novelty is principally combinatorial, assembling well established mechanisms in a unique way to address the forces of modern virtual collaboration. Borrowed ideas are credited throughout.
 
-No primitive here is ours, and each is cited to its owner (§5.1). Two couplings are, because neither lineage can express them alone.
+Sigma does not invent new primitives, but two couplings are novel:
 
-**The pair of pointers is not new; the meaning of the second one is.** Version control holds the lower pointer — every branch knows where it forked from. Others do pair it with an upper one: streaming keeps a consumer offset, and Cloudflare OS gates an accept on having merged all of mainline (§1.5.4). In each, though, the upper pointer records what machinery absorbed. Sigma's advances only on an explicit, attributed act — a named claim to have looked — so the gap between the two measures work taken into an actor's premises and never examined. That gap is debt (§3.8), it is held per reader rather than per branch, and it is the reader every one of them lacks.
+**Tracking both position in history with a high-water mark**: all VCS require position-in-history tracking. Sigma tracks a second pointer which advances only on an explicit, attributed act — a named claim to have looked — so the gap between the two measures work taken into an actor's premises and never examined. That gap is debt (§3.8), it is held per reader rather than per branch. This is novel.
 
-**And gate placement becomes a position rather than a property.** A forge's protected branch is review-before, a wiki is review-after, and in each the choice is built into the tool. Here the ledger is unconditional and only the gate moves (§4.4).
-
-The claim is falsifiable in one move: remove a constraint and a capability demonstrated in §3 must collapse. Exhibit a deployment that drops one and loses nothing, or a substrate that holds all six and still absorbs a contribution its author never reckoned with, and the pattern is wrong (§5.2).
+**Gate placement as a position rather than a property:** a forge's protected branch is review-before, a wiki is review-after, and in each the choice is built into the tool. Here the ledger is unconditional and only the gates moves (§4.4).
 
 Below we detail Sigma, beginning with the constraints that resolve these pulls (§2).
 
@@ -228,6 +222,14 @@ Stated as constraints — the pattern is this list:
 5. **Explicit currency.** The substrate keeps books on what each actor has acknowledged seeing. Currency is never the default state; it is an explicit act, and the books answer in constant time.
 6. **Provenance as contract.** Every change carries who it belongs to (the principal) and what it came through (the agent) — asserted by the substrate, consumed by its own machinery.
 
+<p align="center" width="80%">
+<img alt="Figure 5" width="90%" src="./figures/fig-forces-constraints.png">
+<br/>
+<i>
+Figure 5: The constraints set against the forces that demand them (§1.4). Pressures on contributing enter from the left, pressures on seeing from the right. The fan-in is uneven and stays that way: explicit currency answers four forces, provenance as contract answers one.
+</i>
+</p>
+
 Held together, the six yield the **guardrails** §1.3 says the substrate must now carry. They take four forms, and each is a consequence of the constraints rather than a feature beside them:
 
 - **Boundaries** — what a participant can see and touch. What is not reachable cannot be leaked or damaged, and revocation is the withdrawal of a view rather than an appeal to anyone's good behavior. A boundary is a capability, and not only over data: tools arrive as mounts too, so what a participant may *do* and may *see* are one grant (constraints 1–2).
@@ -235,9 +237,25 @@ Held together, the six yield the **guardrails** §1.3 says the substrate must no
 - **Standing** — what a participant is trusted to do, held as a granted, graduated, revocable position: read, fork, propose, push. Under distrust the structure degrades rather than expels — an untrusted actor is not removed, it simply works behind more gates (constraints 1, 4).
 - **Books** — what is remembered: who contributed what, through which actor, on whose behalf, knowing what. Answerability after the fact is half of what makes any assurance real (constraints 3, 5, 6).
 
+<p align="center" width="80%">
+<img alt="Figure 6" width="90%" src="./figures/fig-constraints-guardrails.png">
+<br/>
+<i>
+Figure 6: The guardrails as consequences. Each is produced by named constraints rather than added beside them, and constraint 4 is the only one reaching both ways — what standing degrades into, and what a gate enforces.
+</i>
+</p>
+
 The machinery that enforces these runs inside them. A referee, a validator, a watcher is an actor with a view, a standing and a ledger position like any other — there is no privileged plane from which the guardrails are applied.
 
 After the constraints defining the pattern, everything else is a **variation point**, chosen per deployment and per path: where the review gate sits (before a contribution lands, or after it, as tracked debt); how audiences are arranged (one trunk, or forks tracking forks); how far a writer is trusted (push rights, or proposal-only until verified); how coarse a contribution is.
+
+<p align="center" width="80%">
+<img alt="Figure 7" width="90%" src="./figures/fig-guardrails-dials.png">
+<br/>
+<i>
+Figure 7: The variation points, held per guardrail. A deployment moves a dial and never removes a guardrail — the dashed boxes are the whole of what it chooses. The familiar shapes, the pull request and suggest-mode and the maintainer hierarchy, are settings here (§4.4).
+</i>
+</p>
 
 The sections that follow justify each constraint from the use cases that force it — and show that the familiar machinery of collaboration, the pull request, suggest-mode, the maintainer hierarchy, reappears as configurations of the variation points rather than rivals to the pattern.
 
@@ -357,7 +375,7 @@ Staleness, not collision, triggers reconciliation, as explained below in §3.7.
 
 If the trunk has moved under the proposed contribution, the substrate holds everything reconciliation needs: basis, mine, and trunk — a true three-way comparison, surfaced at a useful granularity (regions, not lines).
 
-**The substrate never detects semantic conflict.** This is a renunciation, not a gap we mean to close later. Winograd and Flores argued that meaning arises against a background of shared practice that no formalism captures (1986) and a substrate claiming to compute coherence would be claiming exactly what is beyond it. What a substrate _can_ formalize is the structure of acts — who declared which basis, who resolved, on whose behalf — and that is what Sigma formalizes. Detection is deliberately mechanical — a stale basis is a pointer comparison, standard optimistic concurrency (Kung & Robinson, 1981; §5.1) — and we claim no clever merge. What Sigma adds is not smarter detection but an owed response: nothing merges silently; the full basis-to-now delta is served, and truth advances only through an explicit, attributable act of resolution. _Who_ performs that act — a human, an agent, a policy — is a variation point. That it is performed, recorded, and attributed is not.
+**The substrate never detects semantic conflict.** This is a renunciation, not a gap we mean to close later. Winograd and Flores argued that meaning arises against a background of shared practice that no formalism captures (1986) and a substrate claiming to compute coherence would be claiming exactly what is beyond it. What a substrate _can_ formalize is the structure of acts — who declared which basis, who resolved, on whose behalf — and that is what Sigma formalizes. Detection is deliberately mechanical — a stale basis is a pointer comparison, standard optimistic concurrency (Kung & Robinson, 1981) — and we claim no clever merge. What Sigma adds is not smarter detection but an owed response: nothing merges silently; the full basis-to-now delta is served, and truth advances only through an explicit, attributable act of resolution. _Who_ performs that act — a human, an agent, a policy — is a variation point. That it is performed, recorded, and attributed is not.
 
 This is illustrated below - the condition that forces reconciliation, and the result of a reconcile.
 
@@ -372,7 +390,7 @@ gitGraph
    commit id: "42" type: HIGHLIGHT
 ```
 
-Figure 5: A refused push condition. The trunk has surpassed the writer's basis. This will force reconciliation.
+Figure 8: A refused push condition. The trunk has surpassed the writer's basis. This will force reconciliation.
 
 
 ```mermaid
@@ -388,7 +406,7 @@ gitGraph
 ```
 <p align="center">
 <i>
-Figure 6: Post reconciliation push. On the branch, the chain is re-minted onto 42 — one new commit per old one, author and message preserved. On the trunk, it lands as one squashed, attributable act.
+Figure 9: Post reconciliation push. On the branch, the chain is re-minted onto 42 — one new commit per old one, author and message preserved. On the trunk, it lands as one squashed, attributable act.
 </i>
 </p>
 
@@ -460,10 +478,10 @@ Two useful shapes then fall out of the dials instead of being built. An actor wh
 We now walk the machinery of §3.6–3.8 end to end. Editors A and B — one may be human, one an agent; the pattern does not care — share a working trunk at head 41, and both hold basis 41. They edit the same trunk (possibly the same file), and while B works, the trunk moves. Access to the trunk is moderated through a centralized system holding the respective workspaces (§3.5).
 
 <p align="center" width="80%">
-<img alt="Figure 7" width="80%" src="./figures/fig-concurrent-editors.png">
+<img alt="Figure 10" width="80%" src="./figures/fig-concurrent-editors.png">
 <br/>
 <i>
-Figure 7: Concurrent editors. A and B share a working trunk at head 41 and both hold basis 41; while B works, the trunk moves.
+Figure 10: Concurrent editors. A and B share a working trunk at head 41 and both hold basis 41; while B works, the trunk moves.
 </i>
 </p>
 
@@ -497,13 +515,13 @@ A **fork** extends the same machinery one level. A fork is a trunk created from 
 
 Concretely: Bob is a participant in a shared project. Bob gets a fork of the plan trunk. The fork's audience is Bob's side of the table — Bob, Bob's agents, Bob's async notifiers. His assistant branches off _his fork_, not off the shared trunk. Everything in flight on Bob's side is invisible upstream by construction: privacy is the audience boundary itself (§3.4), not a visibility flag.
 
-Figure 8 articulates a complex topology for Bob.
+Figure 11 articulates a complex topology for Bob.
 
 <p align="center" width="80%">
-<img alt="Figure 8" width="80%" src="./figures/fig-topology.png">
+<img alt="Figure 11" width="80%" src="./figures/fig-topology.png">
 <br/>
 <i>
-Figure 8: Hierarchical topology. Bob's fork, his workspace, and his assistant's, each branching from the fork rather than from the shared trunk.
+Figure 11: Hierarchical topology. Bob's fork, his workspace, and his assistant's, each branching from the fork rather than from the shared trunk.
 </i>
 </p>
 
@@ -550,7 +568,7 @@ gitGraph
 
 <p align="center">
 <i>
-Figure 9: Working on forks. The upstream never sees the interstitial commits, never holds an actor's half-finished reasoning, and answers to exactly one contributor — the fork owner itself. That is what "every hop a gate" buys, and it is the same push machinery.
+Figure 12: Working on forks. The upstream never sees the interstitial commits, never holds an actor's half-finished reasoning, and answers to exactly one contributor — the fork owner itself. That is what "every hop a gate" buys, and it is the same push machinery.
 </i>
 </p>
 
@@ -681,15 +699,11 @@ Transport is deliberately unspecified; our implementation happens to serve both 
 
 ## **5. Analysis**
 
-## **5.1 Sigma's conceptual lineage**
+## **5.1 The removal test**
 
-As alluded prior: **version control is almost all you need.** The market feels the gap — a wave of systems (ElectricSQL, Jazz, and kin) now layers versioning and sync over application databases, each recovering a piece of the ensemble.
+§1 states the claim; §3 has shown the mechanics, so it can now be itemised. Remove the basis and reasoning is lost to retries. Remove composed views and attention and security collapse to the repository grain. Remove the ledger and divergence goes unnoticed at machine pace. Remove adjudication and merges silently corrupt. Remove audience scoping and the fork topology — privacy included — is inexpressible. Remove the provenance contract and no policy can tell a click from an inference.
 
-Sigma's response is to compose the pieces from first principles. From **version control**: durable divergence, the three-way reconcile, history as first-class truth. From **Plan 9**: the composed, per-actor namespace. From **optimistic concurrency** (Kung & Robinson, 1981): the basis-carried write. From the streaming world's **consumer offsets**: the reader's currency ledger. From the **forge**: gates and proposals. From **truth maintenance** (Doyle, 1979): the declared justification — and its deliberate contrast, since a TMS propagates retraction and Sigma refuses to (§3.7). None of these mechanisms is ours; we cite the owners deliberately.
-
-Sigma is to VCS and the forge what REST was to HTTP: the pattern extracted from the one place it already works, stated as constraints to be instantiated where it doesn't yet.
-
-§1.6 states the test; here it is itemised, now that §3 has shown the mechanics. Remove the basis and reasoning is lost to retries. Remove composed views and attention and security collapse to the repository grain. Remove the ledger and divergence goes unnoticed at machine pace. Remove adjudication and merges silently corrupt. Remove audience scoping and the fork topology — privacy included — is inexpressible. Remove the provenance contract and no policy can tell a click from an inference.
+So the pattern falls in one move: exhibit a deployment that drops a constraint and loses nothing, or a substrate that holds all six and still absorbs a contribution its author never reckoned with.
 
 ## **5.2 What Sigma is not**
 
@@ -742,10 +756,10 @@ The staleness check is a detector forcing the consumer to answer "does this land
 - **False positives are the price of perfect recall** — a dismissal plus an acknowledgment, with the cost detailed in §4.5.
 
 <p align="center" width="80%">
-<img alt="Figure 10" width="80%" src="./figures/fig-awareness-quadratic.png">
+<img alt="Figure 13" width="80%" src="./figures/fig-awareness-quadratic.png">
 <br/>
 <i>
-Figure 10: Awareness is quadratic. A full mesh of $W(W-1)/2$ pairs, partitioned into near-linear clusters with one reconciled boundary between them — which is what a fork topology buys (§3.10).
+Figure 13: Awareness is quadratic. A full mesh of $W(W-1)/2$ pairs, partitioned into near-linear clusters with one reconciled boundary between them — which is what a fork topology buys (§3.10).
 </i>
 </p>
 

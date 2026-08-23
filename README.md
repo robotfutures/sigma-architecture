@@ -137,13 +137,21 @@ These constraints hand a deployment four **guardrails** — the trust and securi
 3. **Books (Provenance & Debt Ledgers):** Record immutable **basis provenance** (Principal ID, Agent ID, Workspace, Basis Commit) on every change, and track debt for every workspace (§3.8–3.9).
 4. **Standing (Graduated Authority):** Represents an actor's granted, revocable trust position (fork, propose, push). Under distrust, actors operate behind more restrictive gates (§3.10, §5.6.2).
 
+<p align="center" width="80%">
+<img alt="Figure 5" width="90%" src="./figures/fig-constraints-guardrails-dials.png">
+<br/>
+<i>
+Figure 5: What the six yield, and what a deployment then sets. Guardrails follow from named constraints rather than sitting beside them; only the dashed dials are chosen (§2, §4.4).
+</i>
+</p>
+
 Scaling is a property of the topology. Workspaces narrow attention (§3.4), and partitioning by topic, audience and privacy bounds contention and the cost of pairwise attention without repealing either (§3.10, §5.4.2).
 
 <p align="center" width="80%">
-<img width="90%" alt="Figure 5" src="./figures/fig-collaboration-substrate.png" />
+<img width="90%" alt="Figure 6" src="./figures/fig-collaboration-substrate.png" />
 <br/>
 <i>
-Figure 5: Figure 1 redrawn once the pattern is in place. Every party attaches to trunks and to nothing else, holding one ledger position per trunk rather than one per peer — pairwise attention is still owed, now measurable and partitionable (§5.4.2). Memory is a trunk, so the assistant reads it and Bob revokes it by unmounting. The world gets a seat: a monitor lands its changes where they are seen and owed.
+Figure 6: Figure 1 redrawn once the pattern is in place. Every party attaches to trunks and to nothing else, holding one ledger position per trunk rather than one per peer — pairwise attention is still owed, now measurable and partitionable (§5.4.2). Memory is a trunk, so the assistant reads it and Bob revokes it by unmounting. The world gets a seat: a monitor lands its changes where they are seen and owed.
 </i>
 </p>
 
@@ -159,10 +167,10 @@ The Sigma pattern sits above the filesystem, database, and messaging technologie
 - A substrate is a single logical system, and may be singular or a composition of systems. The pattern dictates a minimal contract — an API surface, support for atomic compare-and-swap (CAS) — leaving the underlying implementation open.
 
 <p align="center" width="80%">
-<img width="80%" alt="Figure 6" src="./figures/fig-substrate-planes.svg" />
+<img width="80%" alt="Figure 7" src="./figures/fig-substrate-planes.svg" />
 <br/>
 <i>
-Figure 6: A reference decomposition of a substrate, split into a data plane — where work moves — and a control plane, where its shape is set. The control plane configures the data plane and is never negotiated at write time. The pattern does not prescribe this layout; it requires only the guarantees these pieces deliver.
+Figure 7: A reference decomposition of a substrate, split into a data plane — where work moves — and a control plane, where its shape is set. The control plane configures the data plane and is never negotiated at write time. The pattern does not prescribe this layout; it requires only the guarantees these pieces deliver.
 </i>
 </p>
 
@@ -187,7 +195,7 @@ Its **novelty is combinatorial**, and deliberately boring: version control, Plan
 
 ### **Gravity**
 
-For nearly all work – from book chapters, legal documents, to construction documents and more – **incoherence is far more toxic than trivially detected line conflicts due to its silence under standard merge methods.** While Sigma claims no ability to detect incoherence — coherence lives in meaning, and only judgment can check it (§3.7) — a substrate implementing Sigma's constraints offers a robust suite of mechanics for managing this, in real time and retrospectively to maximize coherence. Shifting the collision test from *"did we edit the same line?"* to *"might the premises you reasoned from have moved?"* is an essential pivot for human-AI workflows, and it extends the Git-forge-like collaboration as a runtime pattern for complex heterogeneous collaborations (§5.1).
+For nearly all work – from book chapters, legal documents, to construction documents and more – **incoherence is far more toxic than trivially detected line conflicts due to its silence under standard merge methods.** While Sigma claims no ability to detect incoherence — coherence lives in meaning, and only judgment can check it (§3.7) — a substrate implementing Sigma's constraints offers a robust suite of mechanics for managing this, in real time and retrospectively to maximize coherence. Shifting the collision test from *"did we edit the same line?"* to *"might the premises you reasoned from have moved?"* is an essential pivot for human-AI workflows, and it extends the Git-forge-like collaboration as a runtime pattern for complex heterogeneous collaborations (§1.5.2).
 
 An easy critique of Sigma is that it is complex. We agree. The forces are many and they pull against one another, and balancing them is a daunting task — this pattern is not small, and neither is the document behind it. What we point at in return is the void: nothing treats coherent collaboration as first class. We have built toolchains and workflows that do the job and still fall short of what agents demand — rigor, alignment, traceability, in behavior and in the work products themselves. Ad hoc answers will keep being found, and will keep being welded to the niche that produced them.
 
