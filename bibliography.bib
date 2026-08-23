@@ -245,6 +245,156 @@
 }
 
 % ---------------------------------------------------------------
+% Coherence as first class, in the domains that pay for it (§1.5.2)
+% The strongest prior art in the paper: all seven capacities, welded to one
+% artifact type, one regulation, and human pace.
+% ---------------------------------------------------------------
+
+@techreport{eia649,
+      title={Configuration Management Standard},
+      author={{SAE International}},
+      number={EIA-649},
+      institution={SAE International (formerly Electronic Industries Alliance)},
+      year={2019},
+      note={TODO verify revision letter and year before submission — EIA-649 has run through
+            several (649B 2011, 649C 2019); cite whichever is current.
+            The four functions are configuration identification, change control, status
+            accounting, and verification/audit. Two map straight onto Sigma. A BASELINE is a
+            named state that work is made against and changes are proposed relative to —
+            constraint 3's basis, arrived at from the hardware side decades earlier. STATUS
+            ACCOUNTING is the books (§3.9): a standing record of what is approved, what is
+            pending, and against which baseline. Cited in §1.5.2 as evidence that the
+            mechanisms are not novel — what is missing is a medium that carries them for work
+            that is not a part or a drawing.},
+}
+
+@techreport{do178c,
+      title={DO-178C: Software Considerations in Airborne Systems and Equipment Certification},
+      author={{RTCA, Inc.}},
+      institution={RTCA / EUROCAE (as ED-12C)},
+      year={2011},
+      note={Cited in §1.5.2 for one property only: bidirectional requirements traceability is
+            MANDATORY for certification, not a practice a team may adopt. Where the forge
+            leaves the link between a premise and the work optional, an airworthiness regime
+            refuses the certificate without it. The related mechanism the section actually
+            leans on — the SUSPECT LINK, where changing a requirement flags every artifact
+            traced to it until a person clears the flag — is a requirements-management tool
+            behaviour (DOORS and kin), not a DO-178C clause; keep the two claims separate.},
+}
+
+@misc{doors,
+      title={IBM Engineering Requirements Management DOORS},
+      author={{IBM}},
+      howpublished={Software; product documentation},
+      note={TODO cite product docs properly before submission.
+            Source of the sharpest single mechanism in §1.5.2: the SUSPECT LINK. A traceability
+            link is marked suspect when either end changes; the flag persists until a human
+            re-examines the pair and clears it, and cleared flags are attributable. That is
+            Sigma's debt (§3.8) and its discharge-by-attributed-act (constraint 5) at
+            requirement grain, shipped since the 1990s. Two differences worth stating if a
+            reviewer presses: it is held per link rather than per reader, so it answers "has
+            this pair been re-examined" and not "has THIS actor reckoned with what moved"; and
+            it lives in an application, so it does not survive the work leaving the tool.},
+}
+
+@techreport{aragon2014doors,
+      title={Generalized Information Architecture for Managing Requirements in
+             IBM's Rational DOORS Application},
+      author={Aragon, Kathryn Mary and Eaton, Shelley Margit and
+              McCornack, Marjorie Turner and Shannon, Sharon Anne},
+      number={SAND2014-20563},
+      institution={Sandia National Laboratories},
+      address={Albuquerque, NM},
+      year={2014},
+      note={Fifteen years of fielded requirements practice, written down. Cited once, in §3.6,
+            for the BASELINE SET. It exists because without it "links will point to the current
+            version of the object in the target module regardless of whether the target module
+            has been baselined" (§3.5.2.2, Fig. 13) — pin one artifact and its references
+            silently follow their targets, so the record preserves the wrong relationship. That
+            is the cross-trunk basis vector, arrived at from requirements management rather than
+            from version control, and it is a fielded failure rather than a design argument.
+            NOT prior art on constraint 5: no per-reader state of any kind, single-editor module
+            locking as policy, and divergence treated as a hazard to prohibit rather than
+            information to surface. Worth knowing when citing: 60 pages of standard DOORS
+            architecture from a national lab, and SUSPECT LINKS are never mentioned — the
+            mechanism nearest to debt ships in the tool and goes unreached-for.},
+}
+
+@techreport{iso13485,
+      title={ISO 13485: Medical devices — Quality management systems — Requirements for regulatory purposes},
+      author={{International Organization for Standardization}},
+      institution={ISO},
+      year={2016},
+      note={Cited in §1.5.2 as the quality-system half of the regulated-industry argument,
+            alongside 21 CFR Part 820 (the FDA Quality System Regulation, now harmonising
+            toward 13485). Design controls, document control, and change control are the
+            relevant machinery: a controlled document has a state, an owner, an approval path
+            and a history, enforced rather than conventional.},
+}
+
+@misc{cfr21part11,
+      title={21 CFR Part 11: Electronic Records; Electronic Signatures},
+      author={{U.S. Food and Drug Administration}},
+      howpublished={Code of Federal Regulations, Title 21, Part 11},
+      year={1997},
+      note={Constraint 6 as law. An electronic signature binds an act to an identified person;
+            the audit trail is computer-generated, time-stamped, independent of operator
+            control, and may not overwrite prior entries. Sigma asserts provenance as a design
+            contract; Part 11 asserts it as an inspectable obligation with a regulator behind
+            it. Cited in §1.5.2. Related and cited in the same breath: ALCOA+ (attributable,
+            legible, contemporaneous, original, accurate, plus complete, consistent, enduring,
+            available), the data-integrity doctrine whose first two demands are constraints 6
+            and 5. TODO before submission: ALCOA+ needs its own citable source — FDA's data
+            integrity CGMP Q&A guidance (2018) or MHRA's 'GXP' Data Integrity Guidance and
+            Definitions (2018); verify title and year of whichever is chosen.},
+}
+
+% ---------------------------------------------------------------
+% Coherence — the term itself (§1.2, §3.7)
+% ---------------------------------------------------------------
+
+@book{beaugrande1981textlinguistics,
+      title={Introduction to Text Linguistics},
+      author={de Beaugrande, Robert-Alain and Dressler, Wolfgang Ulrich},
+      publisher={Longman},
+      address={London and New York},
+      series={Longman Linguistics Library 26},
+      year={1981},
+      note={The source for §1.2's "linguistic sense". Coherence is the second of seven
+            standards of textuality, defined as CONTINUITY OF SENSES — "the mutual access
+            and relevance within a configuration of concepts and relations" underlying the
+            surface text. Two borrowings. (1) The definition itself: coherence is a property
+            of the configuration, not of any part, which is why §1.2 can hold three
+            conditions at once and call the whole coherent or not. (2) Receiver-dependence:
+            a text does not carry its sense, it is actualized by a receiver against their
+            own stored knowledge — so coherence is not always achieved and not achieved
+            identically by two readers. That is §1.2's "judged from a view, and views
+            differ", and it is why "by whom" is a first-class concern rather than a caveat.
+            Cited alongside Winograd and Flores, who supply the stronger claim (the
+            background is unformalizable); de Beaugrande and Dressler supply the definition
+            we are actually using. Frequently reprinted; the 1981 Longman edition is the
+            one to cite.},
+}
+
+@book{halliday1976cohesion,
+      title={Cohesion in English},
+      author={Halliday, M. A. K. and Hasan, Ruqaiya},
+      publisher={Longman},
+      address={London},
+      series={English Language Series 9},
+      year={1976},
+      note={The cohesion/coherence split, and the paper's sharpest available analogy for
+            what a clean merge proves. Cohesion is surface connectivity — reference,
+            ellipsis, substitution, conjunction, lexical cohesion — the grammatical ties
+            between the actual words present. It is checkable on the text alone. Coherence
+            is not, and cohesion neither guarantees nor is required for it: a passage can
+            tie together perfectly and mean nothing consistent. This is exactly §3.7's
+            figure — the three-way merge is a COHESION check (did these lines collide),
+            offered as though it settled coherence. Cite where the paper says the merge is
+            clean because no lines collided.},
+}
+
+% ---------------------------------------------------------------
 % Collaboration failure modes (position paper §2–3 summands)
 % ---------------------------------------------------------------
 
@@ -355,8 +505,12 @@
       url={https://automerge.org/},
 }
 
-% TODO: Perforce client views / protections / streams — cite product docs
-%       (strongest prior art on scoped views; §5.2 have-list footnote).
+% DROPPED 2026-08-23: Perforce client views / protections / streams. Its only mention was
+%       the have-list footnote under the §5.3 comparison table, which was killed with the
+%       table. Technically the strongest prior art on scoped views, but not worth citing:
+%       enterprise, code-only, "let's talk" pricing, and two generations of losing ground
+%       to GitHub. A reader who knows it does not need the citation; a reader who does not
+%       is not helped by it. Do not reinstate on the strength of the mechanism alone.
 % TODO: Dolt or similar versioned-database citation for footnote 1
 %       (rows-consuming Sigma coherence).
 % TODO: ElectricSQL and Jazz citations (§5.1 "the market feels the gap").
@@ -370,7 +524,22 @@
       author={Fielding, Roy Thomas},
       school={University of California, Irvine},
       year={2000},
-      note={The style-extracted-from-a-working-instance precedent (§5.2: "Sigma is to the forge what REST was to HTTP")},
+      note={The style-extracted-from-a-working-instance precedent (§5.2: "Sigma is to the forge what REST was to HTTP"), and the register precedent for the whole paper. Cited for extraction and for the cacheability analogy (§1.2) — NOT for the classificatory reading of "constraint". That inference runs through STYLE: a style is a coordinated set of constraints, so dropping one yields a different style. Sigma is framed as a pattern and never uses "style", so the warrant does not transfer, and the classificatory claim it produces is unfalsifiable by construction. Alexander carries that load instead (alexander1979timeless). Removed from the abstract 2026-08-22.
+            Third use, added 2026-08-22: ch. 6 ("Experience and Evaluation") as the model for a
+            held-open §5.3. Fielding does not measure REST; he reports applying it to HTTP/1.1 and
+            the URI standards and draws architectural lessons. That is the form §5.3 waits on from
+            the reference implementation — what the pattern cost to build, where it bent, which
+            variation points bore weight — and it is why the §1 claim boundary now disclaims
+            measurement outright rather than pleading a partial implementation.},
+}
+
+@book{alexander1979timeless,
+      title={The Timeless Way of Building},
+      author={Alexander, Christopher},
+      publisher={Oxford University Press},
+      year={1979},
+      note={Source of "forces" as the competing pressures a pattern resolves within a context — the vocabulary the software pattern literature later borrowed. Used in §1.4 for the domain forces, which pull against one another (visibility vs. awareness, attention vs. completeness) as distinct from the pattern's prescriptive constraints.
+            Second and heavier use, added 2026-08-22: the warrant for why the six constraints are necessary. Alexander's pattern is a context, a system of forces, and a configuration in which those forces come to rest; a pattern has no arbitrary parts, because each element is present only at some force's demand. Validity is therefore functional and testable — a configuration missing a piece leaves a force in conflict — not definitional. This is the point the software reception mislaid: the GoF inheritance turned patterns into a catalog of reusable solutions, where Alexander's own claim is riskier, a conjecture about which arrangement lets a system of forces settle, refutable by exhibiting a force it fails to hold. That is exactly §1.6's falsifiability test, and it replaces the classificatory reading previously borrowed from Fielding (see fielding2000rest).},
 }
 
 @book{brooks1975mythical,
@@ -419,9 +588,16 @@
             schema captures context. This is the ground for the paper's own no-guarantee
             claim (coherence judged, never computed) — cited as ally at the claim boundary,
             not answered as attack. Reviewers deploying W&F against Sigma hit only systems
-            that claim to compute coherence; the paper renounces exactly that.
+            that claim to compute coherence; the paper renounces exactly that. Placed
+            2026-08-13 in §3.7 (at "never detects semantic conflict"), §5.5 (validity is no
+            fixed predicate) and §5.7 — the last restoring a sentence that carried this
+            citation in position.md and was dropped in the carry-over to the whitepaper.
             (3) CONVERSATIONS-FOR-ACTION: their speech-act workflow system (The Coordinator)
-            is the ancestor of commitment-typed channels (§6 future work).},
+            is the ancestor of commitment-typed channels (§6 future work) — cited there
+            2026-08-13 as the route from Searle into system design. Note the deeper debt the
+            paper does not yet state: Sigma already follows the Coordinator's discipline —
+            formalize the structure of commitment, renounce the semantics — so this is
+            governing precedent for §3.7 as built, not only a future extension.},
 }
 
 @book{searle1969speechacts,
@@ -484,8 +660,17 @@
             premise verdicts. Corroborates the capabilities fold: agents start at zero
             access, resources arrive as typed capability bindings, ocap RPC (Cap'n Web),
             no ambient authority. Gatekeepers = gates + boundaries at the service seam.
-            Stops short of coherence books: collaboration is live shared state or a
-            blueprint copy — no basis-carried writes, no adjudication, no currency ledger.},
+            Repo verified 2026-08-22 at HEAD 1ef6020, correcting an earlier reading:
+            gadget code IS held in a real git object database (SHA-1, zlib loose objects,
+            packages/workshop-backend/src/git-store.ts) with no ref layer — the chat thread
+            is the branch. submitCodeChange carries a basis (a stream position plus, per
+            gadget, the head commit the content derives from) which the server validates;
+            adjudication exists as OT transform, diff3 with conflict markers, and a
+            fast-forward gate returning merged-or-stale. ChatGadgetPinState.mergedCommit is
+            a per-BRANCH high-water mark. What is absent is a per-READER frontier: no unread
+            state, no receipts, no acknowledgment, and docs/sharing.md lists notifications
+            as future work. Collaboration is live shared state, a branch-and-accept for
+            code, or a blueprint copy.},
 }
 
 @misc{lettacontextrepos2026,
@@ -502,4 +687,242 @@
             exactly where Sigma begins: reconciliation is git conflict resolution — line
             grain, no basis, no premise check — and single-tenant, so no audiences, books,
             or standing.},
+}
+
+% ---------------------------------------------------------------
+% Failure modes with formal names (§3.3, §3.6, §5.6.2)
+% Premise invalidation · check-to-use races · silent corruption
+% ---------------------------------------------------------------
+
+@article{doyle1979tms,
+      title={A Truth Maintenance System},
+      author={Doyle, Jon},
+      journal={Artificial Intelligence},
+      volume={12},
+      number={3},
+      pages={231--272},
+      year={1979},
+      note={Added 2026-08-13. The formal name for what a stale basis means. Beliefs carry
+            justifications naming the premises they rest on; retract a premise and every
+            dependent belief is marked OUT — never silently retained. Sigma's declared basis
+            is the same record at the coordination layer (§3.6), and §3.3's "premises that
+            still hold" is TMS's supported-belief condition stated in prose. Verdict: lineage
+            and deliberate contrast — a TMS propagates retraction automatically through the
+            justification network; Sigma refuses to, converting the identical signal into an
+            owed, attributed act (§3.7). Cite in §3.6 and the §5.1 lineage list.},
+}
+
+@article{stallman1977ddb,
+      title={Forward Reasoning and Dependency-Directed Backtracking in a System for
+             Computer-Aided Circuit Analysis},
+      author={Stallman, Richard M. and Sussman, Gerald Jay},
+      journal={Artificial Intelligence},
+      volume={9},
+      number={2},
+      pages={135--196},
+      year={1977},
+      note={Added 2026-08-13. Origin of dependency-directed backtracking, which Doyle
+            formalized and Hanson & Sussman ch. 9 carries forward — the bib currently enters
+            this lineage mid-stream at hanson2021flexibility. Contradiction is traced to the
+            premises that caused it rather than undone chronologically: the same move as
+            serving the basis-to-now delta instead of "your push failed, retry" (§3.7).
+            Optional; a §5.1 footnote beside doyle1979tms.},
+}
+
+@article{dekleer1986atms,
+      title={An Assumption-Based TMS},
+      author={de Kleer, Johan},
+      journal={Artificial Intelligence},
+      volume={28},
+      number={2},
+      pages={127--162},
+      year={1986},
+      note={Added 2026-08-13. Holds many contexts at once — each an assumption set with its
+            own derived beliefs — rather than maintaining one consistent state. The closest
+            formal analogue to audience-scoped truth (§3.4): parallel worlds, no global
+            consistency requirement, and a belief's standing is always relative to a context.
+            Verdict: strongest placement is actually §5.5 — an ATMS is a system that declines
+            to reduce N contexts to one value, which is the concurrence-not-consensus
+            argument in an older register.},
+}
+
+@article{kung1981optimistic,
+      title={On Optimistic Methods for Concurrency Control},
+      author={Kung, H. T. and Robinson, John T.},
+      journal={ACM Transactions on Database Systems},
+      volume={6},
+      number={2},
+      pages={213--226},
+      year={1981},
+      note={Added 2026-08-13. Fills a hole: §5.1 names "optimistic concurrency" as a lineage
+            column and §3.6 names compare-and-swap, and neither carries a citation. The
+            read-validate-write structure is exactly the basis-carried contribution — a
+            transaction records what it read, and validation at commit asks whether those
+            reads still hold. Verdict: direct ancestor, and the contribution is legible as a
+            widening on two axes — the read set goes from rows to premises, and the
+            validation window from milliseconds to the actor's whole reasoning episode.
+            Cite in §3.6 at "standard optimistic concurrency" and in §5.1.},
+}
+
+@article{bishop1996toctou,
+      title={Checking for Race Conditions in File Accesses},
+      author={Bishop, Matt and Dilger, Michael},
+      journal={Computing Systems},
+      volume={9},
+      number={2},
+      pages={131--152},
+      year={1996},
+      note={Added 2026-08-13. The canonical TOCTOU paper — the flaw class named and
+            characterized: a check and the use it authorizes are separated in time, and the
+            world moves in between. §3.6 is structurally the fix (check and use bound into
+            one validated landing), and §3.3's "does what I reasoned from still hold?" is a
+            TOCTOU question standing unnamed. Verdict: the reframing is the value — classic
+            TOCTOU windows are microseconds between a stat and an open, and are exploits;
+            Sigma's window is the interval between reading context and acting on it, is
+            minutes to hours, and is the normal case. Cite in §3.3 and §3.6.},
+}
+
+@inproceedings{wei2005tocttou,
+      title={TOCTTOU Vulnerabilities in UNIX-Style File Systems: An Anatomical Study},
+      author={Wei, Jinpeng and Pu, Calton},
+      booktitle={Proceedings of the 4th USENIX Conference on File and Storage Technologies (FAST '05)},
+      year={2005},
+      note={Added 2026-08-13. TODO: page numbers unverified — USENIX proceedings are not in
+            Crossref and DBLP was unreachable at survey time; every other entry in this
+            block was index-verified. Systematic enumeration of the flaw class in a real
+            filesystem: the window is not a rare interleaving but a structural property of
+            the API. Optional support for bishop1996toctou; carries weight only if §3.6
+            argues that check-then-act is endemic rather than a bug.},
+}
+
+@article{schlichting1983failstop,
+      title={Fail-Stop Processors: An Approach to Designing Fault-Tolerant Computing Systems},
+      author={Schlichting, Richard D. and Schneider, Fred B.},
+      journal={ACM Transactions on Computer Systems},
+      volume={1},
+      number={3},
+      pages={222--238},
+      year={1983},
+      note={Added 2026-08-13. Names the property §5.6.2 and §3.7 are asserting without a
+            word for it. A fail-stop processor halts detectably rather than producing wrong
+            output; the whole design value is that the failure is observable to everything
+            downstream. "Nothing merges silently" is a fail-stop discipline applied to
+            meaning rather than to processors — and the paper's Go analogy in §3.7 is
+            reaching for this. Cite in §5.6.2 Integrity, and at §3.3's "corruption ...
+            while undetected".},
+}
+
+@article{lamport1982byzantine,
+      title={The Byzantine Generals Problem},
+      author={Lamport, Leslie and Shostak, Robert and Pease, Marshall},
+      journal={ACM Transactions on Programming Languages and Systems},
+      volume={4},
+      number={3},
+      pages={382--401},
+      year={1982},
+      note={Added 2026-08-13. Fills a hole: §5.2 and §5.5 disclaim Byzantine tolerance by
+            name, uncited. Also fixes the boundary precisely, which is worth a clause rather
+            than a bare disclaimer — Byzantine faults are arbitrary and undetectable by
+            inspection, so the machinery buys detection; Sigma's failure mode is the mirror
+            image, where divergence is trivially detected and the open question is who
+            answers for it. Cite in §5.2 bullet 1 and §5.5.},
+}
+
+@inproceedings{hochschild2021cores,
+      title={Cores That Don't Count},
+      author={Hochschild, Peter H. and Turner, Paul and Mogul, Jeffrey C. and Govindaraju, Rama
+              and Ranganathan, Parthasarathy and Culler, David E. and Vahdat, Amin},
+      booktitle={Proceedings of the Workshop on Hot Topics in Operating Systems (HotOS XVIII)},
+      pages={9--16},
+      year={2021},
+      note={Added 2026-08-13. The empirical face of silent corruption: CPUs that compute
+            confidently wrong answers with no error signal, detected only through downstream
+            inconsistency, and expensive to trace back. Verdict: rhetorical anchor, not
+            lineage — the mechanism is unrelated, but it transfers a burden of proof. The
+            industry already accepts that silent wrongness at scale justifies detection
+            machinery; §3.3 is making the same argument about meaning and currently argues
+            it from first principles alone. Strongest single citation for that paragraph.},
+}
+
+@misc{dixit2021silent,
+      title={Silent Data Corruptions at Scale},
+      author={Dixit, Harish Dattatraya and Pendharkar, Sneha and Beadon, Matt and Mason, Chris
+              and Chakravarthy, Tejasvi and Muthiah, Bharath and Sankar, Sriram},
+      year={2021},
+      eprint={2102.11245},
+      archivePrefix={arXiv},
+      url={https://arxiv.org/abs/2102.11245},
+      note={Added 2026-08-13. Meta's account, independent of and contemporaneous with
+            hochschild2021cores — two hyperscalers naming the same failure mode in the same
+            year, which is what makes it citable as an accepted phenomenon rather than one
+            group's anecdote. Corruptions propagate across the stack and surface as
+            application-level problems months later: the amplification claim in §3.3, with
+            numbers. Pair with hochschild2021cores or use whichever reads better; both is
+            defensible only if §3.3 leans on the convergence.},
+}
+
+@article{winograd1987languageaction,
+      title={A Language/Action Perspective on the Design of Cooperative Work},
+      author={Winograd, Terry},
+      journal={Human--Computer Interaction},
+      volume={3},
+      number={1},
+      pages={3--30},
+      year={1987},
+      note={Added 2026-08-13. The CSCW-facing statement of winograd1986understanding's design
+            program, and the version this field actually cites (orig. CSCW '86). Design
+            principle stated plainly: a system cannot represent the domain's meaning, so
+            formalize the structure of commitment instead — request, promise, counter-offer,
+            declaration. That is Sigma's split between the act (formalized, on the books) and
+            the judgment (never computed). Cited in §6 beside searle1969speechacts.},
+}
+
+@article{suchman1993categories,
+      title={Do Categories Have Politics? The Language/Action Perspective Reconsidered},
+      author={Suchman, Lucy},
+      journal={Computer Supported Cooperative Work (CSCW)},
+      volume={2},
+      number={3},
+      pages={177--190},
+      year={1993},
+      note={Added 2026-08-13, bib only — NOT cited in the draft, deliberately. The canonical
+            critique of the Coordinator: formalizing speech acts imposes a discipline on the
+            people being formalized, and the category scheme encodes whose account of the
+            work counts. This lands on Sigma, which compels acknowledgment and writes
+            standing into the books, and a CSCW reviewer will raise it. §3.7's "no mechanic
+            to enforce reasoning; the gate obliges at least performative action" is already
+            half the answer — the obligation is procedural, and the paper declines to type
+            the pragmatics precisely where Suchman's objection bites. Placing it needs a
+            §5.4.3 that does not exist yet; author's call, not the editor's.},
+}
+
+@misc{zeddelta2026,
+      title={Introducing Delta},
+      author={{Zed Industries}},
+      year={2026},
+      url={https://zed.dev/blog/introducing-delta},
+      note={Blog survey 2026-08-13 (post of 2026-08-12 — the ink is wet; scored on the
+            announcement, not on docs). Fourth co-genesis point, from the editor side, and
+            the closest one yet on diagnosis. Two of their three named pain points are ours:
+            the durable unit is the state *between* commits (git discards it, collaboration
+            happens in it — our §3.6 "work-in-progress is real state, not a dirty buffer"),
+            and review context goes stale the moment code moves beneath it (our §4.4 stale
+            approvals). DeltaDB replicates the worktree AND the conversation together, live,
+            per participant; git stays canonical underneath; comments anchor to code and
+            survive edits; history stays with the code. CRDTs unnamed in the body but the
+            post roots itself in zed.dev/blog/crdts.
+            THE CONTRAST WORTH KEEPING: same diagnosis, opposite repair. They *anchor* — the
+            comment tracks moving code, preserving location and staying legible. We *pin* —
+            the approval records the head it endorsed, preserving the claim and exposing the
+            drift. An anchored comment on drifted code still reads as endorsement of work
+            its author never saw. Not substitutes; the composition is anchor-for-legibility
+            plus pin-for-accountability, and only the second is a substrate guarantee.
+            Second contrast: replicating the draft is a third position beyond destruction
+            and multiverse (§5.4.1) — divergence is prevented rather than resolved, which
+            works precisely when no actor reasons long enough to need a snapshot protected.
+            Stops short where the others do: no basis (○ by construction — a live-replicated
+            draft has no prior state to name), no reader currency, no audience topology, no
+            adjudication; collaboration is humans + one agent, so multi-actor contention does
+            not yet arise. Placed: §7 (co-genesis), §4.4 (anchoring vs pinning), §5.4.1
+            (third position), Table 1 "Replicated worktree" row + note d.},
 }

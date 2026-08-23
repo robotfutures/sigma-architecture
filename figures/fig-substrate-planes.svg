@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="720" viewBox="0 0 1160 720" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M0,0 L9,3.5 L0,7 Z" fill="#5b6478"/></marker>
+    <marker id="ac" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M0,0 L9,3.5 L0,7 Z" fill="#e8862a"/></marker>
+  </defs>
+  <rect width="1160" height="720" fill="#ffffff"/>
+
+  <text x="580" y="40" text-anchor="middle" font-size="23" font-weight="700" fill="#1c2440">A substrate, decomposed</text>
+  <text x="580" y="65" text-anchor="middle" font-size="13.5" font-style="italic" fill="#5b6478">one implementation — the pattern requires the guarantees, not this layout</text>
+
+  <!-- ===== clients ===== -->
+  <text x="40" y="98" font-size="11" font-weight="700" letter-spacing="1.1" fill="#8a93a6">CLIENTS</text>
+  <g font-size="12.5" fill="#1c2440">
+    <rect x="40" y="110" width="180" height="44" rx="9" fill="#ffffff" stroke="#8a93a6" stroke-width="1.5" stroke-dasharray="5 4"/>
+    <text x="130" y="137" text-anchor="middle">Agents &amp; processes</text>
+    <rect x="234" y="110" width="200" height="44" rx="9" fill="#ffffff" stroke="#8a93a6" stroke-width="1.5" stroke-dasharray="5 4"/>
+    <text x="334" y="137" text-anchor="middle">Humans, via apps</text>
+    <rect x="448" y="110" width="160" height="44" rx="9" fill="#ffffff" stroke="#8a93a6" stroke-width="1.5" stroke-dasharray="5 4"/>
+    <text x="528" y="137" text-anchor="middle">Clients / CLI</text>
+    <rect x="820" y="110" width="260" height="44" rx="9" fill="#ffffff" stroke="#8a93a6" stroke-width="1.5" stroke-dasharray="5 4"/>
+    <text x="950" y="137" text-anchor="middle">Admin &amp; provisioning</text>
+  </g>
+
+  <path d="M130,154 L130,186" fill="none" stroke="#5b6478" stroke-width="1.6" marker-end="url(#a)"/>
+  <path d="M334,154 L334,186" fill="none" stroke="#5b6478" stroke-width="1.6" marker-end="url(#a)"/>
+  <path d="M528,154 L528,186" fill="none" stroke="#5b6478" stroke-width="1.6" marker-end="url(#a)"/>
+  <path d="M950,154 L950,186" fill="none" stroke="#e8862a" stroke-width="1.6" marker-end="url(#ac)"/>
+
+  <!-- ===== data plane ===== -->
+  <rect x="40" y="190" width="660" height="440" rx="14" fill="#eef7f1" stroke="#2e9e5b" stroke-width="2.4"/>
+  <text x="60" y="216" font-size="12" font-weight="700" letter-spacing="1.1" fill="#2e9e5b">DATA PLANE — WHERE WORK MOVES</text>
+
+  <g font-size="13.5" font-weight="700" fill="#1c2440">
+    <rect x="60" y="228" width="620" height="42" rx="8" fill="#ffffff" stroke="#8a93a6" stroke-width="1.5" stroke-dasharray="5 4"/>
+    <text x="370" y="254" text-anchor="middle" fill="#5b6478">Authentication</text>
+
+    <rect x="60" y="282" width="620" height="42" rx="8" fill="#ffffff" stroke="#2e9e5b" stroke-width="1.8"/>
+    <text x="370" y="308" text-anchor="middle">Data Plane API</text>
+
+    <rect x="60" y="336" width="620" height="42" rx="8" fill="#ffffff" stroke="#2e9e5b" stroke-width="1.8"/>
+    <text x="370" y="362" text-anchor="middle">Authorization</text>
+
+    <rect x="60" y="390" width="300" height="42" rx="8" fill="#ffffff" stroke="#2e9e5b" stroke-width="1.8"/>
+    <text x="210" y="416" text-anchor="middle">Content</text>
+    <rect x="380" y="390" width="300" height="42" rx="8" fill="#ffffff" stroke="#2e9e5b" stroke-width="1.8"/>
+    <text x="530" y="416" text-anchor="middle">Workspace</text>
+
+    <rect x="60" y="444" width="254" height="42" rx="8" fill="#ffffff" stroke="#2e9e5b" stroke-width="1.8"/>
+    <text x="187" y="470" text-anchor="middle">Executables</text>
+    <rect x="324" y="444" width="150" height="42" rx="8" fill="#ffffff" stroke="#2e9e5b" stroke-width="1.8"/>
+    <text x="399" y="470" text-anchor="middle">Ledger</text>
+    <rect x="484" y="444" width="196" height="42" rx="8" fill="#ffffff" stroke="#2e9e5b" stroke-width="1.8"/>
+    <text x="582" y="470" text-anchor="middle">Version control</text>
+
+    <rect x="60" y="498" width="620" height="48" rx="8" fill="#ffffff" stroke="#2e9e5b" stroke-width="1.8"/>
+    <text x="370" y="527" text-anchor="middle">Storage</text>
+  </g>
+
+  <text x="370" y="580" text-anchor="middle" font-size="11.5" font-style="italic" fill="#5b6478">basis, debt, provenance and the audit trail live here — below the application, not in it</text>
+  <text x="370" y="602" text-anchor="middle" font-size="11.5" font-style="italic" fill="#5b6478">this is the plane an actor touches on every read and every push</text>
+
+  <!-- ===== control plane ===== -->
+  <rect x="760" y="190" width="360" height="440" rx="14" fill="#fdf3e7" stroke="#e8862a" stroke-width="2.4"/>
+  <text x="780" y="216" font-size="12" font-weight="700" letter-spacing="1.1" fill="#e8862a">CONTROL PLANE — WHERE SHAPE IS SET</text>
+
+  <g font-size="13.5" font-weight="700" fill="#1c2440">
+    <rect x="780" y="228" width="320" height="42" rx="8" fill="#ffffff" stroke="#8a93a6" stroke-width="1.5" stroke-dasharray="5 4"/>
+    <text x="940" y="254" text-anchor="middle" fill="#5b6478">Authn &amp; authz</text>
+
+    <rect x="780" y="282" width="320" height="42" rx="8" fill="#ffffff" stroke="#e8862a" stroke-width="1.8"/>
+    <text x="940" y="308" text-anchor="middle">Control Plane API</text>
+
+    <rect x="780" y="336" width="320" height="42" rx="8" fill="#ffffff" stroke="#e8862a" stroke-width="1.8"/>
+    <text x="940" y="362" text-anchor="middle">Policies</text>
+
+    <rect x="780" y="390" width="320" height="42" rx="8" fill="#ffffff" stroke="#e8862a" stroke-width="1.8"/>
+    <text x="940" y="416" text-anchor="middle">Mounts</text>
+
+    <rect x="780" y="444" width="152" height="42" rx="8" fill="#ffffff" stroke="#e8862a" stroke-width="1.8"/>
+    <text x="856" y="470" text-anchor="middle">Trunks</text>
+    <rect x="948" y="444" width="152" height="42" rx="8" fill="#ffffff" stroke="#e8862a" stroke-width="1.8"/>
+    <text x="1024" y="470" text-anchor="middle">Namespaces</text>
+
+    <rect x="780" y="498" width="320" height="48" rx="8" fill="#ffffff" stroke="#e8862a" stroke-width="1.8"/>
+    <text x="940" y="527" text-anchor="middle">Lifecycle</text>
+  </g>
+
+  <text x="940" y="580" text-anchor="middle" font-size="11.5" font-style="italic" fill="#5b6478">audiences, gate placement and standing</text>
+  <text x="940" y="602" text-anchor="middle" font-size="11.5" font-style="italic" fill="#5b6478">are configured here, never negotiated at write time</text>
+
+  <!-- ===== cross-plane links ===== -->
+  <polygon points="700,410 744,344 744,386 760,386 760,434 744,434 744,476"
+           fill="#e8862a" fill-opacity="0.9"/>
+  <text x="730" y="332" text-anchor="middle" font-size="10" font-weight="700" fill="#e8862a">configures</text>
+
+  <!-- ===== footer ===== -->
+  <rect x="40" y="640" width="1080" height="60" rx="10" fill="#ffffff" stroke="#dbe0ea" stroke-width="1.4" stroke-dasharray="4 4"/>
+  <text x="580" y="664" text-anchor="middle" font-size="12.5" font-style="italic" fill="#5b6478">Policies decide what authorization admits; mounts compose a workspace; trunks are what version control keeps.</text>
+  <text x="580" y="686" text-anchor="middle" font-size="12.5" font-style="italic" fill="#5b6478">A substrate may split these differently, or fold them into one system — the pattern asks only that the guarantees hold.</text>
+</svg>
