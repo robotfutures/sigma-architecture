@@ -9,7 +9,7 @@ The **Sigma Architectural Pattern** — *Sigma* — is a pattern for collaborati
 > Two or more parties working together virtually to create or achieve the same goal in overlapping-but-distinct realities, with time and the external world pressuring the work and collaborators themselves.
 
 <p align="center" width="80%">
-<img width="80%" src="./figures/fig-collaboration-domain.png">
+<img width="80%" src="./figures/fig-1.1-collaboration-domain.png">
 <br/>
 <i>
 Figure 1: Collaboration, redefined. Each party reasons inside its own reality — the human's lived, the agent's engineered — and the shared work exists only in the overlap. Time and the external world steer both and move underneath the work, consulting neither.
@@ -29,7 +29,7 @@ The conditions describe coherent work. What a group must do to keep them true ar
 **Sigma**, like its mathematical namesake $\Sigma$, is a summation: truth is a running sequence of summed and reconciled contributions, each carrying the basis it was reasoned from (§2), and coherence is judged at each step.
 
 <p align="center" width="80%">
-<img alt="Figure 2" width="80%" src="./figures/fig-coherence.svg">
+<img alt="Figure 2" width="80%" src="./figures/fig-1.2-coherence.svg">
 <br/>
 <i>
 Figure 2: Coherence and what upholds it. Grounding produces grounded premises; recomposing spans non-contradiction and purpose together. Capacities 3–5 are what make those possible; 6 and 7 knit the fabric that upholds judgment (§1.2).
@@ -105,10 +105,12 @@ The View Out derives from:
 
 Constraints 1, 2 & 3 yield a bounded workspace with basis, history, capabilities, and an **attention budget** (§3.4) (you can't touch what you can't see). An application will have different views out by principal and purpose. Reasoning happens against a view. Writes land in durable branch state — not a dirty buffer — and are pushed in batch against the declared basis (§3.6). In the event a trunk moved between the view out and the write, Sigma forces reconciliation:
 
-* Constraint 4: **Adjudicated reconciliation:** If the trunk moves, the push is refused on *staleness* — the premises may have shifted — forcing explicit, attributable human or machine resolution rather than a silent merge (§3.7).
-* Constraint 5: **Explicit currency:** The substrate tracks how much landed upstream state an actor has not yet acknowledged — a **high-water mark** against the trunk head, so "am I current?" costs one comparison however large the world has grown. The gap is *debt*, retired only by an explicit acknowledgment (§3.8).
+* Constraint 4: **Adjudicated reconciliation:** If the trunk moves, the push is refused on *divergence* — the premises may have shifted — forcing explicit, attributable human or machine resolution rather than a silent merge (§3.7).
+* Constraint 5: **Explicit currency:** The substrate tracks how much absorbed upstream state an actor has not yet acknowledged — a **high-water mark** against the workspace's basis, so "am I current?" costs one comparison however large the world has grown. The gap is *debt*, retired only by an explicit acknowledgment (§3.8).
 
 Together, constraints 4 & 5 mean nothing lands silently (§3.7). At the very least, a contributor has to look at what moved and attest they looked. Diligent contributors will: read the change, hold it against the work they were about to submit, and choose — acknowledge and merge as-is, rebase and rework, land it anyway with open disclosure, propose for review instead of landing. Exactly how this adjudication unfolds — by reasoning, by policy, or both — is up to the deployment. These are **gates-as-dials** — one of the pattern's **variation points**, the choices a deployment makes within it (§2, §4.4), and the subject of extensive discussion.
+
+Four conditions meet at that gate, kept distinct because each has its own discharge. **Divergence** — the trunk moved past the declared basis ($B < U$); a fact about the trunk, absorbed deliberately by pulling or rebasing. **Contested** — the part of a divergence flagged by the mount's grain (§3.7); a contested push is refused unless it carries a disclosure accepting the divergence. **Conflicting** — mechanically unmergeable: no merged tree exists until content is chosen, so no disclosure reaches it — only attributed resolution. **Debt** — movement already absorbed but not yet acknowledged ($H < B$); no push lands over it, and only an explicit acknowledgment retires it (§3.8). One law covers the gate: **disclosure bypasses policy, never mechanics**.
 
 Trunk boundaries (constraint 1) are therefore the concurrency dial — unrelated work belongs on different trunks (§4.5) — and a false positive (constraint 4) costs an acknowledgment to merge
 as-is (constraint 5).
@@ -123,7 +125,7 @@ Finally, work which lands in any form is attributed:
 
 
 <p align="center" width="80%">
-<img alt="Figure 4" src="./figures/fig-core-loop.png" />
+<img alt="Figure 4" src="./figures/fig-2.1-core-loop.png" />
 <br/>
 <i>
 Figure 4: The transactional loop. A contribution carries the basis it was reasoned from. If truth moved, the delta is served *before* anything lands, and the contributor either re-reasons, explicitly acknowledges, or defers judgment to another via a proposal.
@@ -207,4 +209,4 @@ Systems shipped in the last few months — Block's **Buzz**, **Cloudflare OS**, 
 
 ---
 
-**Read further:** [The Sigma Architecture — the whitepaper](whitepaper.md)
+**Read further:** [The Sigma Architecture — the paper](00_index.md)
