@@ -30,10 +30,11 @@ Figure numbers are section-relative; file names carry the same number. Live figu
 | 1.1 | Collaboration, redefined | [§1.1](01_introduction.md) | [fig-1.1-collaboration-domain.png](figures/fig-1.1-collaboration-domain.png) |
 | 1.2 | Coherence and what upholds it | [§1.2](01_introduction.md) | [fig-1.2-coherence.svg](figures/fig-1.2-coherence.svg) |
 | 1.3 | The cascade | [§1.4.1](01_introduction.md) | inline |
-| 2.1 | Sigma's core loop | [§2](02_sigma.md) | [fig-2.1-core-loop.png](figures/fig-2.1-core-loop.png) |
-| 2.2 | The constraints set against the forces | [§2](02_sigma.md) | [fig-2.2-forces-constraints.png](figures/fig-2.2-forces-constraints.png) |
-| 2.3 | The guardrails as consequences | [§2](02_sigma.md) | [fig-2.3-constraints-guardrails.png](figures/fig-2.3-constraints-guardrails.png) |
-| 2.4 | The variation points, held per guardrail | [§2](02_sigma.md) | [fig-2.4-guardrails-dials.png](figures/fig-2.4-guardrails-dials.png) |
+| 2.1 | Collaboration on a Sigma substrate | [§2](02_sigma.md) | [fig-2.1-collaboration-on-sigma.png](figures/fig-2.1-collaboration-on-sigma.png) |
+| 2.2 | Sigma's core loop | [§2](02_sigma.md) | [fig-2.2-core-loop.png](figures/fig-2.2-core-loop.png) |
+| 2.3 | The constraints set against the forces | [§2](02_sigma.md) | [fig-2.3-forces-constraints.png](figures/fig-2.3-forces-constraints.png) |
+| 2.4 | The guardrails as consequences | [§2](02_sigma.md) | [fig-2.4-constraints-guardrails.png](figures/fig-2.4-constraints-guardrails.png) |
+| 2.5 | The variation points, held per guardrail | [§2](02_sigma.md) | [fig-2.5-guardrails-dials.png](figures/fig-2.5-guardrails-dials.png) |
 | 3.1 | Debt against divergence | [§3.3](03_the_model.md) | [fig-3.1-debt-vs-divergence.png](figures/fig-3.1-debt-vs-divergence.png) |
 | 3.2 | Contested against conflicting | [§3.3](03_the_model.md) | [fig-3.2-contested-vs-conflicting.png](figures/fig-3.2-contested-vs-conflicting.png) |
 | 3.3 | Concurrent editors | [§3.5](03_the_model.md) | [fig-3.3-concurrent-editors.png](figures/fig-3.3-concurrent-editors.png) |

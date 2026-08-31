@@ -4,19 +4,30 @@
 
 **Truth is the reconciled sum of contributions, each carrying the basis it was reasoned from.**
 
-Work happens in **workspaces**, against composed **views** of shared, audience-scoped histories — **trunks** (§3.2). Views flow out; work accumulates against them freely — edits are cheap, local, never interrupted by the world moving. Reconciliation is owed only at the boundaries: when work is offered back, or when a view deliberately catches up. The offer carries its **basis** — *here is my work, and here is what I knew when I did it* — and truth advances only through an explicit, attributable act (§3.5). That is the whole loop:
+Work happens in **workspaces**, against composed **views** of shared, audience-scoped histories — **trunks** (§3.2). Inter-actor collaboration is through the substrate – with trunks serving as coordination channels, as well as spaces for private or shared work artifacts. Externalities mirror in and out via monitors and effectors, also contributing to, and driven off, shared trunks within scoped workspaces. All accounted for.
+
+<p align="center" width="80%">
+<img alt="Figure 2.1" width="60%" src="./figures/fig-2.1-collaboration-on-sigma.png">
+<br/>
+<i>
+Figure 2.1: Collaboration on a Sigma substrate. Every party attaches to trunks via workspaces; trunks serve many purposes, audience-bound. The world joins — in and out — via monitors and effectors.
+</i>
+</p>
+
+
+Views flow out; work accumulates against them freely, scoped to individual workspaces — edits are cheap, never interrupted by the world or peers moving. Reconciliation is owed only at the boundaries: when work is offered back, or when a view deliberately catches up. The offer carries its **basis** — *here is my work, and here is what I knew when I did it* — and truth advances only through an explicit, attributable act (§3.5). That is the whole loop:
 
 **view out → reason → contribute against basis → reconcile → truth advances → views update.**
 
 <p align="center" width="80%">
-<img alt="Figure 2.1" width="40%" src="./figures/fig-2.1-core-loop.png">
+<img alt="Figure 2.2" width="40%" src="./figures/fig-2.2-core-loop.png">
 <br/>
 <i>
-Figure 2.1: Sigma's core loop. Data flows bidirectionally, and the return path is transactional. Sigma (Σ) is a summation — truth as the running, _reconciled_ sum of everyone's contributions.
+Figure 2.2: Sigma's core loop. Data flows bidirectionally, and the return path is transactional. Sigma (Σ) is a summation — truth as the running, _reconciled_ sum of everyone's contributions.
 </i>
 </p>
 
-The **pattern** is the list of constraints below and the discipline for composing them; it is what this paper describes. The pattern applies to a **collaboration substrate**: a logical system between infrastructure and application code, which agents — and humans through apps — work through. A **system** is one deployment of a substrate, with its variation points chosen. The pattern declares a minimal contract on whatever supplies it: an addressable namespace, atomic compare-and-swap at every mutable pointer, durable history, and an authenticated principal bound to every workspace, leaving the rest open (§5.7).
+The **pattern** is the list of constraints below and the discipline for composing them. The pattern applies to a **collaboration substrate**: a logical system between infrastructure and application code, which agents — and humans through apps — work through. A **system** is one deployment of a substrate, with its variation points chosen. The pattern declares a minimal contract on whatever supplies it: an addressable namespace, atomic compare-and-swap at every mutable pointer, durable history, and an authenticated principal bound to every workspace, leaving the rest open (§5.7).
 
 Stated as constraints — the pattern is this list:
 
@@ -28,20 +39,12 @@ Stated as constraints — the pattern is this list:
 6. **Provenance as contract.** Every landing records the principal, the acting agent, the workspace, and the basis (§3.7) — asserted by the substrate, consumed by its own machinery.
 
 <p align="center" width="80%">
-<img alt="Figure 2.2" width="80%" src="./figures/fig-2.2-forces-constraints.png">
+<img alt="Figure 2.3" width="80%" src="./figures/fig-2.3-forces-constraints.png">
 <br/>
 <i>
-Figure 2.2: The constraints set against the forces that demand them (§1.4). Pressures on contributing enter from the left, pressures on seeing from the right. The fan-in is uneven and stays that way: explicit currency answers four forces, provenance as contract answers one.
+Figure 2.3: The constraints set against the forces that demand them (§1.4). Pressures on contributing enter from the left, pressures on seeing from the right. The fan-in is uneven and stays that way: explicit currency answers four forces, provenance as contract answers one.
 </i>
 </p>
-
-Sigma's novelty is principally combinatorial, assembling well established mechanisms in a unique way to address the forces of modern virtual collaboration. Borrowed ideas are credited throughout.
-
-Sigma does not invent new primitives, but two couplings are novel:
-
-**Tracking both state- and read-position in history with a high-water mark**: all VCS require position-in-history tracking. Sigma tracks a second pointer which advances only on an explicit, attributed act — a named claim to have looked — so the gap between the two measures work taken into an actor's premises and never examined. That gap is debt (§3.3), held per workspace. This is novel.
-
-**Gate placement as a position rather than a property:** a forge's protected branch is review-before, a wiki is review-after, and in each the choice is built into the tool. Here the ledger is unconditional and only the gate moves (§5.4).
 
 Held together, the six yield the **guardrails** §1.3 says the substrate must now carry. They take four forms, and each is a consequence of the constraints rather than a feature beside them:
 
@@ -51,10 +54,10 @@ Held together, the six yield the **guardrails** §1.3 says the substrate must no
 - **Books** — what is remembered: who contributed what, through which actor, on whose behalf, knowing what. Answerability after the fact is half of what makes any assurance real (constraints 3, 5, 6).
 
 <p align="center" width="80%">
-<img alt="Figure 2.3" width="90%" src="./figures/fig-2.3-constraints-guardrails.png">
+<img alt="Figure 2.4" width="90%" src="./figures/fig-2.4-constraints-guardrails.png">
 <br/>
 <i>
-Figure 2.3: The guardrails as consequences. Each is produced by named constraints rather than added beside them, and constraint 4 is the only one reaching both ways — what standing degrades into, and what a gate enforces.
+Figure 2.4: The guardrails as consequences. Each is produced by named constraints rather than added beside them, and constraint 4 is the only one reaching both ways — what standing degrades into, and what a gate enforces.
 </i>
 </p>
 
@@ -63,11 +66,21 @@ The machinery that enforces these runs inside them. A referee, a validator, a wa
 After the constraints defining the pattern, everything else is a **variation point**, chosen per deployment and per path: where the review gate sits (before a contribution lands, or after it, as tracked debt); how audiences are arranged (one trunk, or forks tracking forks); how far a writer is trusted (push rights, or proposal-only until verified); how coarse a contribution is.
 
 <p align="center" width="80%">
-<img alt="Figure 2.4" width="90%" src="./figures/fig-2.4-guardrails-dials.png">
+<img alt="Figure 2.5" width="90%" src="./figures/fig-2.5-guardrails-dials.png">
 <br/>
 <i>
-Figure 2.4: The variation points, held per guardrail. A deployment moves a dial and never removes a guardrail — the dashed boxes are the whole of what it chooses. The familiar shapes, the pull request and suggest-mode and the maintainer hierarchy, are settings here (§5.4).
+Figure 2.5: The variation points, held per guardrail. A deployment moves a dial and never removes a guardrail — the dashed boxes are the whole of what it chooses. The familiar shapes, the pull request and suggest-mode and the maintainer hierarchy, are settings here (§5.4).
 </i>
 </p>
 
-§3 states the model — the cast, the objects, the algebra, the verbs, the gate, the record, and the topologies they compose into — as definitions. §4 grounds the constraints in the forces of §1.4; the argument lives there. The familiar machinery of collaboration — the pull request, suggest-mode, the maintainer hierarchy — reappears as settings of the variation points, not rivals to the pattern (§5.4).
+§3 states the model — the cast, the objects, the algebra, the verbs, the gate, the record, and the topologies they compose into — as definitions. §4 grounds the constraints in the forces of §1.4; the argument lives there. The familiar machinery of collaboration — the pull request, suggest-mode, the maintainer hierarchy — reappears as dials on the variation points (§5.4).
+
+### **2.1 Claims**
+
+Sigma's novelty is principally combinatorial, assembling well established mechanisms in a unique way to address the forces of modern virtual collaboration. Borrowed ideas are credited throughout.
+
+Sigma does not invent new primitives, but two couplings are novel:
+
+**Tracking both state- and read-position in history with a high-water mark**: all VCS require position-in-history tracking. Sigma tracks a second pointer which advances only on an explicit, attributed act — a named claim to have looked — so the gap between the two measures work taken into an actor's premises and never examined. That gap is debt (§3.3), held per workspace. This is novel.
+
+**Gate placement as a position rather than a property:** a forge's protected branch is review-before, a wiki is review-after, and in each the choice is built into the tool. Here the ledger is unconditional and only the gate moves (§5.4).

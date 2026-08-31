@@ -125,7 +125,7 @@ Finally, work which lands in any form is attributed:
 
 
 <p align="center" width="80%">
-<img alt="Figure 4" src="./figures/fig-2.1-core-loop.png" />
+<img alt="Figure 4" src="./figures/fig-2.2-core-loop.png" />
 <br/>
 <i>
 Figure 4: The transactional loop. A contribution carries the basis it was reasoned from. If truth moved, the delta is served *before* anything lands, and the contributor either re-reasons, explicitly acknowledges, or defers judgment to another via a proposal.
@@ -150,10 +150,10 @@ Figure 5: What the six yield, and what a deployment then sets. Guardrails follow
 Scaling is a property of the topology. Workspaces narrow attention (§3.2), and partitioning by topic, audience and privacy bounds contention and the cost of pairwise attention without repealing either (§3.8, §6.4.2).
 
 <p align="center" width="80%">
-<img width="90%" alt="Figure 6" src="./figures/fig-collaboration-substrate.png" />
+<img width="70%" alt="Figure 6" src="./figures/fig-2.1-collaboration-on-sigma.png" />
 <br/>
 <i>
-Figure 6: Figure 1 redrawn once the pattern is in place. Every party attaches to trunks and to nothing else, holding one ledger position per trunk rather than one per peer — pairwise attention is still owed, now measurable and partitionable (§6.4.2). Memory is a trunk, so the assistant reads it and Bob revokes it by unmounting. The world gets a seat: a monitor lands its changes where they are seen and owed.
+Figure 6: Figure 1 redrawn against a Sigma substrate. Every party attaches to trunks via workspaces. Trunks serve many purposes, audience-bound. Scratch, memory, sessions are a trunk(s) held in common between humans and their agents; shared work is shared by many. The world – in and out – via monitors and effectors, all driven by debt on the ledger, and protected by guardrails.
 </i>
 </p>
 
