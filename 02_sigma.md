@@ -84,3 +84,13 @@ Sigma does not invent new primitives, but two couplings are novel:
 **Tracking both state- and read-position in history with a high-water mark**: all VCS require position-in-history tracking. Sigma tracks a second pointer which advances only on an explicit, attributed act — a named claim to have looked — so the gap between the two measures work taken into an actor's premises and never examined. That gap is debt (§3.3), held per workspace. This is novel.
 
 **Gate placement as a position rather than a property:** a forge's protected branch is review-before, a wiki is review-after, and in each the choice is built into the tool. Here the ledger is unconditional and only the gate moves (§5.4).
+
+### **2.2 Non-claims**
+
+The following claims are rejected:
+- Consensus and Byzantine tolerance;
+- Conflict-free editing, and real-time co-editing;
+- An alternative to streams;
+- A better GitHub (or code forge).
+
+The grounds for rejection are argued in §6.2.

@@ -112,7 +112,7 @@ The chain (§3.2) is a unit: a push lands it squashed as one attributable act, a
 **Refused.** Four grounds, each with its own discharge:
 
 1. **Open debt** ($H < B$) — the change may rest on premises never reckoned with. Discharged by **ack**.
-2. **Non-conformance** ($t_{policy}(T) = \text{denied}$) — the push violates the mount's write policy: a path outside the grant, standing short of push, a required check unmet. No disclosure satisfies it. Discharged by rework to conformance, by **propose** where standing demands review, or by **abandon**.
+2. **Non-conformance** ($t_{policy}(T) = \text{denied}$) — the push violates the trunk's write policy, which a grant may only tighten (§3.3): a path outside the grant, standing short of push, a required check unmet. No disclosure satisfies it. Discharged by rework to conformance, by **propose** where standing demands review, or by **abandon**.
 3. **Contested divergence** ($B < U;\ t_{policy}(T) = \text{contested}$) – the change is flagged by trunk policy at the mount's grain. Discharged by rework, or stepped over by a **disclosure** — a writer-supplied, structured note acknowledging the divergence, attached to the act and riding the landing onto the books.
 4. **Conflicting divergence** ($B < U;\ \Delta(U-B) \perp T$) — refused regardless of any disclosure. Discharged only by **resolve** — the indeterminate paths are served as objects in the view, each carrying both sides and the basis, and the resolution is written back in the workspace.
 

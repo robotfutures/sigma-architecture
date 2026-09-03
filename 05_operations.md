@@ -111,4 +111,6 @@ The pattern commits to no representation. It requires only the contract of §2 �
 
 Two choices are obvious, not required. **Files**: for reasoning actors, semantic-carrying paths that every model and every tool already speak; in this shape the verbs of §3.4 are writes to control files in the workspace's own namespace, and a client's tool surface collapses to two operations — read a view, write branch state. A REST surface projects the same shape. An agent may mount its view as a virtual filesystem; that is client topology. **Content addressing**: commits need durable, immutable identities that hold across trunk and deployment boundaries — forks, provenance edges, and vector bases all reference commits from outside their own trunk — and a content address, the hash of content and parent, is the only identity that needs no naming authority. A deployment could substitute ordinals without a change to its guarantees.
 
+Files are a choice: a Sigma consuming versioned-database rows instead of files is a valid design — git-style versioned databases theoretically could conform.
+
 Transport is deliberately unspecified; our implementation happens to serve both planes over ordinary HTTP.

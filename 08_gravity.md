@@ -13,7 +13,3 @@ We see systems produced in just the past few months like Block's Buzz or Cloudfl
 <p align="center" style="font-size: 6em">
 /Σ
 </p>
-
----
-
-¹ A Sigma consuming versioned-database rows instead of files is a valid design — git-style versioned databases exist. But rows serve schema-ful data, and our domain is the semi-structured remainder (§1), where the file is the natural container. Ergonomics selects among valid designs; it selects the file.

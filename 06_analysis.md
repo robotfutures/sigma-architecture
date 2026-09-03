@@ -10,6 +10,8 @@ So the pattern falls in one move: exhibit a deployment that drops a constraint a
 
 ## **6.2 What Sigma is not**
 
+[Should this move to section 2.1 as explicit rejections?]
+
 Sigma is a composition of patterns and features as an ensemble for one setting — reasoning actors, shared work-products, mixed human and machine pace. The boundaries, explicitly:
 
 1. **Not consensus.** One authoritative trunk per audience; actors are authenticated, and no Byzantine tolerance is claimed (Lamport, Shostak & Pease, 1982; §6.5). Cooperation, however, is not presumed blindly: distrust degrades into topology — an untrusted actor works behind a fork with proposal-only rights, every hop a gate (§3.8, §6.7).

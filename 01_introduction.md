@@ -160,11 +160,13 @@ The **shared editor** — Google Docs, and the OT/CRDT family of algorithms bene
 
 **Version control** — git and its kin. This addresses grounding exactly: every commit names the state it was made from, durably and by construction. It addresses recomposing through mechanical three-way merge, which surfaces conflict rather than dissolving it, and hands the judgment to a person. What it leaves open, it leaves open by design: non-mechanical conflicts, mutual awareness.
 
-### **1.5.2 The forge**
+### **1.5.2 The Git ecosystem**
 
-The forge — git + GitHub et al. – support five of the seven capacities: grounding in the parent, recomposing by three-way merge with a compiler for a referee, attributed judgment at review, rules of engagement in protected branches and code owners, accountability in blame and the fork-propose-maintain ladder. It fails two capacities: mutual awareness and timely reckoning (§1.2), as it has no reader state. Nothing durable records that anyone read anything; `git log @{1}..` is local. Timely reckoning has no clock on it. Further, the forge is an application for a specific kind of work-product, not a pattern.
+The forge — git + GitHub/GitLab/etc – support five of the seven capacities: grounding in the parent, recomposing by three-way merge with a compiler for a referee, attributed judgment at review, rules of engagement in protected branches and code owners, accountability in blame and the fork-propose-maintain ladder. It fails two capacities: mutual awareness and timely reckoning (§1.2), as it has no reader state. Nothing durable records that anyone read anything; `git log @{1}..` is local. Timely reckoning has no clock on it. Further, the forge is an application for a specific kind of work-product, not a pattern.
 
-The forge's acknowledged strengths are why Sigma's vocabulary rhymes with the forge deliberately. As a pattern, Sigma points to *how to balance the forces of collaboration*, without committing to an exact domain subject.
+On the periphery there are tools that extend git, like [josh](https://github.com/josh-project/josh), which proxies monorepos to respond to the forces of partial visibility and bounded attention.
+
+Git and its ecosystem's acknowledged strengths are why Sigma's vocabulary rhymes deliberately. As a pattern, Sigma points to *how to balance the forces of collaboration*, without committing to an exact domain subject.
 
 ### **1.5.3 Products for regulated industries**
 
