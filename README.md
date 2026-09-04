@@ -12,7 +12,7 @@ The **Sigma Architectural Pattern** — *Sigma* — is a pattern for collaborati
 <img width="80%" src="./figures/fig-1.1-collaboration-domain.png">
 <br/>
 <i>
-Figure 1: Collaboration. Each party reasons inside its own reality — the human's lived, the agent's engineered — and the shared work exists only in the overlap. Time and the external world steer both and move underneath the work, consulting neither.
+Figure 1: Collaboration. Each party reasons inside its own reality — the human's lived, the agent's engineered — and the shared work exists only in the overlap. Time and the external world steer both and move underneath the work, without asking either.
 </i>
 </p>
 
@@ -32,7 +32,7 @@ The conditions describe coherent work. What a group must do to keep them true ar
 <img alt="Figure 2" width="80%" src="./figures/fig-1.2-coherence.svg">
 <br/>
 <i>
-Figure 2: Coherence and what upholds it. Grounding produces grounded premises; recomposing spans non-contradiction and purpose together. Capacities 3–5 are what make those possible; 6 and 7 knit the fabric that upholds judgment (§1.2).
+Figure 2: Coherence and what upholds it. Grounding produces grounded premises; recomposing spans non-contradiction and purpose together. Capacities 3–5 are what make those possible; 6 and 7 maintain the structure that upholds judgment (§1.2).
 </i>
 </p>
 
@@ -108,7 +108,7 @@ Constraints 1, 2 & 3 yield a bounded workspace with basis, history, capabilities
 * Constraint 4: **Adjudicated reconciliation:** If the trunk moves, the push is refused on *divergence* — the premises may have shifted — forcing explicit, attributable human or machine resolution rather than a silent merge (§3.5).
 * Constraint 5: **Explicit currency:** The substrate tracks how much absorbed upstream state an actor has not yet acknowledged — a **high-water mark** against the workspace's basis, so "am I current?" costs one comparison however large the world has grown. The gap is *debt*, retired only by an explicit acknowledgment (§3.3).
 
-Together, constraints 4 & 5 mean nothing lands silently (§3.5). At the very least, a contributor has to look at what moved and attest they looked. Diligent contributors will: read the change, hold it against the work they were about to submit, and choose — acknowledge and merge as-is, rebase and rework, land it anyway with open disclosure, propose for review instead of landing. Exactly how this adjudication unfolds — by reasoning, by policy, or both — is up to the deployment. These are **gates-as-dials** — one of the pattern's **variation points**, the choices a deployment makes within it (§2, §5.4), and the subject of extensive discussion.
+Together, constraints 4 & 5 mean nothing lands silently (§3.5). At the very least, a contributor has to look at what moved and attest they looked. Diligent contributors will: read the change, hold it against the work they were about to submit, and choose — acknowledge and merge as-is, rebase and rework, land it anyway with open disclosure, propose for review instead of landing. Exactly how this adjudication unfolds — by reasoning, by policy, or both — is up to the deployment. These are **gates-as-dials** — one of the pattern's **variation points**, the choices a deployment makes within it (§2, §5.4).
 
 The gate distinguishes five conditions, each discharged differently. **Divergence** — the trunk moved past the declared basis ($B < U$); discharged by pulling or rebasing. **Contested** — the part of a divergence flagged by the mount's grain (§3.5); refused unless the push carries a disclosure accepting the divergence. **Non-conforming** — the push violates the trunk's write policy: a path outside the grant, standing short of push, a required check unmet; no disclosure applies — discharged by rework, a proposal, or abandonment (§3.5). **Conflicting** — mechanically unmergeable; no disclosure applies here either — discharged only by attributed resolution of the content. **Debt** — movement absorbed but not yet acknowledged ($H < B$); no push lands over it — discharged by acknowledgment (§3.3). The rule: **a disclosure discharges the warning — the contested condition — and nothing else.** It does not lift a prohibition (non-conforming, conflicting), does not produce a merge, and does not replace an acknowledgment.
 
@@ -147,7 +147,7 @@ Figure 5: What the six yield, and what a deployment then sets. Guardrails follow
 </i>
 </p>
 
-Scaling is a property of the topology. Workspaces narrow attention (§3.2), and partitioning by topic, audience and privacy bounds contention and the cost of pairwise attention without repealing either (§3.8, §6.4.2).
+Scaling is a property of the topology. Workspaces narrow attention (§3.2), and partitioning by topic, audience and privacy bounds contention and the cost of pairwise attention without eliminating either (§3.8, §6.4.2).
 
 <p align="center" width="80%">
 <img width="70%" alt="Figure 6" src="./figures/fig-2.1-collaboration-on-sigma.png" />
@@ -185,11 +185,11 @@ A world-reactive system ($W \ge 1$) needs visibility onto the world and time, wh
 
 In spirit, Sigma has similar aspirations to Jon Doyle's **Truth Maintenance System (TMS, 1979)**. Those systems maintained fine-grained dependency graphs over logical predicates and assumptions, with *client-declared* justifications — free and complete for a deductive problem solver, whose inference is its own justification.
 
-Sigma keeps the division of labor Winograd and Flores drew (1986) — the substrate holds the structure of acts, the actor holds meaning — and keeps Doyle's justification tracking too, at trunk grain rather than predicate grain: the basis *is* the justification. What it drops is the assumption that a fine-grained dependency graph is obtainable from stochastic actors, and that revision **propagation** can be automatic. Even where a graph is available, Sigma does not retract on its own, because an authorless change to shared truth is what constraint 4 forbids, correct or not (§3.5). Where a TMS propagates a *verdict* — this node is now OUT, delivered by machinery to no one — Sigma propagates an **obligation**: you owe a look at what moved, delivered to a name, and possibly owing rework. Dependency graphs remain **useful, as a variation point** (§2): a deployment may ride declared dependencies as metadata on a write, to inform a reconciliation or to narrow the blast radius (§7) when a bad or changed premise must be traced downstream.
+Sigma keeps the division of labor Winograd and Flores drew (1986) — the substrate holds the structure of acts, the actor holds meaning — and keeps Doyle's justification tracking too, at trunk grain rather than predicate grain: the basis *is* the justification. What it drops is the assumption that a fine-grained dependency graph is obtainable from stochastic actors, and that revision **propagation** can be automatic. Even where a graph is available, Sigma does not retract on its own, because an authorless change to shared truth is what constraint 4 forbids, correct or not (§3.5). Where a TMS propagates a *verdict* — this node is now OUT, delivered by machinery to no one — Sigma propagates an **obligation**: you owe a look at what moved, delivered to a name, and possibly owing rework. Dependency graphs remain **useful, as a variation point** (§2): a deployment may carry declared dependencies as metadata on a write, to inform a reconciliation or to narrow the blast radius (§7) when a bad or changed premise must be traced downstream.
 
-de Kleer's **Assumption-based TMS** (1986) also resonates in Sigma: it declines to reduce N contexts to one value, holding each assumption set alongside its own derived beliefs. That is audience-scoped truth (§3.2) and concurrence-rather-than-consensus (§6.5) — hard divergence *mine* vs. *yours* not *ours* is a topology artifact with Sigma.
+de Kleer's **Assumption-based TMS** (1986) has a direct parallel in Sigma: it declines to reduce N contexts to one value, holding each assumption set alongside its own derived beliefs. That is audience-scoped truth (§3.2) and concurrence-rather-than-consensus (§6.5) — hard divergence *mine* vs. *yours* not *ours* is a topology artifact with Sigma.
 
-Its **novelty is combinatorial**, and deliberately boring: version control, Plan 9 namespaces, optimistic concurrency, forge-style adjudication and streaming consumer offsets, cited to their owners and laid out as files, which every model already reads (§5.7). Two couplings are ours, because neither lineage can express them alone.
+Its **novelty is combinatorial**, the parts deliberately familiar: version control, Plan 9 namespaces, optimistic concurrency, forge-style adjudication and streaming consumer offsets, cited to their owners and laid out as files, which every model already reads (§5.7). Two couplings are ours, because neither lineage can express them alone.
 
 **The pair of pointers is not new; the meaning of the second one is.** Others do pair a basis with an upper pointer — a consumer offset, a merged-mainline check — but theirs records what machinery absorbed. Sigma's advances only on an explicit, attributed act, a named claim to have looked, so the gap between the two measures work taken into an actor's premises and never examined. That gap is debt, and it is held per reader rather than per branch (§2, §3.3).
 
@@ -201,7 +201,7 @@ For nearly all work – from book chapters, legal documents, to construction doc
 
 An easy critique of Sigma is that it is complex. We agree. The forces are many and they pull against one another, balancing them is a daunting task, and this pattern is not small. In return we point to the void: nothing treats coherent collaboration as first class, save a few highly specialized enterprise products in regulated industries (§1.5.3). We have built toolchains and workflows that do the job and still fall short of what agents demand — rigor, alignment, traceability, in behavior and in the work products themselves. Ad hoc answers will keep being found, each bound to the niche that produced it.
 
-Systems shipped in the last few months — Block's **Buzz**, **Cloudflare OS**, Zed's **Delta** — are validation that this is the direction, and each reaches for version control as the foundation under human-agent work (§1.5.4). For all they innovate, they leave the full spectrum of forces wanting, and none keeps a ledger of what a reader has reckoned with. By their own declarations they are still reaching. **That is the gravity we mean** (§8).
+Systems shipped in the last few months — Block's **Buzz**, **Cloudflare OS**, Zed's **Delta** — are validation that this is the direction, and each reaches for version control as the foundation under human-agent work (§1.5.4). For all they innovate, they leave the full spectrum of forces wanting, and none keeps a ledger of what a reader has reckoned with. By their own declarations they are still reaching. **That pull is what §8 calls gravity.**
 
 <p align="center" style="font-size: 6em">
 /Σ

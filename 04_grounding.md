@@ -2,7 +2,7 @@
 
 ## **4. Grounding the constraints in the forces**
 
-§3 states the model; this section grounds it. The forces of §1.4 are competing pulls, and a pattern is judged by how it resolves them. No constraint in Sigma is arbitrary as each is present at some force's demand, and each force terminates in a clause of the algebra.
+§3 states the model; this section grounds it. The forces of §1.4 are competing pulls, and a pattern is judged by how it resolves them. No constraint in Sigma is arbitrary as each is present at some force's demand, and each force is answered by a clause of the algebra.
 
 ### **4.1 Concurrency, volume, and pace (force 1 → constraints 3, 4, 5)**
 
@@ -104,7 +104,7 @@ This cost is absorbed by the ledger, per $(w, t)$. It reads who is behind, on wh
 
 ### **4.8 Stemming the failure cascade**
 
-The responses to the forces look fine and good, but: _does Sigma stem the domain's failure cascade (§1.4.1)_?
+The forces are each answered above; the remaining question: _does Sigma stem the domain's failure cascade (§1.4.1)_?
 
 No.
 

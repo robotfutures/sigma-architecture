@@ -74,7 +74,7 @@ Divergent work ($B < U \land T > B$) falls into three categories — two ruled b
 
 Independently of divergence, a push may also be refused outright by policy — **non-conforming**, $t_{policy}(T) = \text{denied}$ — a gate on landing, not a category of divergence (§3.5).
 
-**The grain** is the per-mount contest policy: trunk (default — any movement contests) · tree · path · hunk · never. It answers: how close do edits have to be to contest? The trunk's write policy sets the floor and a granted mount may only tighten it, so no actor softens its own gate (constraint 2). At a finer grain, uncontested drift absorbs at the push and arrives as debt rather than as a refusal, and the guarantee degrades from *nothing lands over unseen work* to *nothing lands over contested unseen work*. Hunk grain — a line-differ deciding — is defensible only where position carries no meaning: append-only logs, inboxes, per-key world state. Never supports write-only participant mounts (§3.6). A conflicting path trips the gate at every grain — the categories partition the prose; mechanics keep the strictest one.
+**The grain** is the per-mount contest policy: trunk (default — any movement contests) · tree · path · hunk · never. It answers: how close do edits have to be to contest? The trunk's write policy sets the floor and a granted mount may only tighten it, so no actor softens its own gate (constraint 2). At a finer grain, uncontested drift absorbs at the push and arrives as debt rather than as a refusal, and the guarantee degrades from *nothing lands over unseen work* to *nothing lands over contested unseen work*. Hunk grain — a line-differ deciding — is defensible only where position carries no meaning: append-only logs, inboxes, per-key world state. Never supports write-only participant mounts (§3.6). A conflicting path trips the gate at every grain — the prose treats the categories as disjoint; the mechanics apply the strictest one that holds.
 
 <p align="center" width="80%">
 <img alt="Figure 3.2" width="66%" src="./figures/fig-3.2-contested-vs-conflicting.png">
@@ -116,7 +116,7 @@ The chain (§3.2) is a unit: a push lands it squashed as one attributable act, a
 3. **Contested divergence** ($B < U;\ t_{policy}(T) = \text{contested}$) – the change is flagged by trunk policy at the mount's grain. Discharged by rework, or stepped over by a **disclosure** — a writer-supplied, structured note acknowledging the divergence, attached to the act and riding the landing onto the books.
 4. **Conflicting divergence** ($B < U;\ \Delta(U-B) \perp T$) — refused regardless of any disclosure. Discharged only by **resolve** — the indeterminate paths are served as objects in the view, each carrying both sides and the basis, and the resolution is written back in the workspace.
 
-Nothing moves under a refusal, and the basis-to-now delta is served with it. The refusal is recorded as a fact, not a transient failure — $L \overset{+}{\leftarrow} \text{refuse}(\text{ground},\ \Delta(U{-}B))$ — it leaves the writer an obligation in that workspace. The four grounds differ in kind: open debt and a conflict are **facts**; non-conformance is a **prohibition**; contested is a **warning**. The law of the gate follows from the kinds — a disclosure discharges exactly one refusal, the warning: it converts policy's flag into an accepted risk, loud, on the books. It cannot lift a prohibition, produce a merge, or stand in for an acknowledgment.
+Nothing moves under a refusal, and the basis-to-now delta is served with it. The refusal is recorded as a fact, not a transient failure — $L \overset{+}{\leftarrow} \text{refuse}(\text{ground},\ \Delta(U{-}B))$ — it leaves the writer an obligation in that workspace. The four grounds differ in kind: open debt and a conflict are **facts**; non-conformance is a **prohibition**; contested is a **warning**. The rule follows from these kinds — a disclosure discharges exactly one refusal, the warning: it converts policy's flag into an accepted risk, loud, on the books. It cannot lift a prohibition, produce a merge, or stand in for an acknowledgment.
 
 **The dials.** Two, set by the deployment: the **grain** (§3.3), which decides the granularity that contests; and the **gate position** (§5.4), which decides whether judgment sits ahead of the landing — a proposal — or after it, as every affected reader's debt.
 
@@ -136,7 +136,7 @@ The table below summarizes the mechanics of reconciliation, based on the state a
 | Any | Superseded: my work no longer applies | abandon | $L \overset{+}{\leftarrow} \text{abandon}(T := B)$ — nothing landed |
 
 
-We now walk the gate end to end. Alice and Carlos — one may be human, one an agent; the model does not care — share a working trunk at head 41, and both hold basis 41. They edit the same trunk, possibly the same file, and while Carlos works, the trunk moves.
+We now walk the gate end to end. Alice and Carlos — one may be human, one an agent; the model does not distinguish them — share a working trunk at head 41, and both hold basis 41. They edit the same trunk, possibly the same file, and while Carlos works, the trunk moves.
 
 <p align="center" width="80%">
 <img alt="Figure 3.3" width="80%" src="./figures/fig-3.3-concurrent-editors.png">
@@ -152,11 +152,11 @@ The substrate blocks the TOCTOU race and CAS forces ordering; the late party rec
 
 Debt requires an acknowledgment on the ledger; no ledger can force a reader to think, but the acknowledgment establishes a logged claim. When a change lands with known divergence, that claim is logged the same way.
 
-This obligation needs dials – the real world is messy. It is not always possible to attest full knowledge and full understanding, and life must go on — so a qualified statement, a **qualifier**, is legal and recorded: "I am acknowledging this, but I do not fully grok it, so my inbound changes are also qualified." These statements (recorded with an ack or push) have two uses: a recorded claim for retrospective audit, or evidence for a policy that blocks a submission and lands it as a proposal instead.
+This obligation needs dials. It is not always possible to attest full knowledge and full understanding, and work must continue — so a qualified statement, a **qualifier**, is legal and recorded: "I am acknowledging this, but I do not fully grok it, so my inbound changes are also qualified." These statements (recorded with an ack or push) have two uses: a recorded claim for retrospective audit, or evidence for a policy that blocks a submission and lands it as a proposal instead.
 
 The **obligation is a property of the mount, not of the change.** $m_{policy}$ (§3.2) tunes the ledger on two dials: **pinned** (default) vs. **unpinned**, and the grain (§3.3). Unpinned suits mounts that are read-only and ambient — acknowledging their debt would be noise, and the basis moves freely with the view out (a continuous, implicit pull).
 
-An actor whose every mount carries the *never* grain is **write-only**: it contributes, and it never owes anyone a look. That is what lets externalities take a seat (§3.1) — a monitor deposits a price, a forecast; its landings raise debt for whoever mounted that trunk *pinned*; it acknowledges nothing in return because it observes nothing in the substrate's world. Full participant on the write path, absent from the read path — an unequal peer, legible in the books. At the opposite setting, an actor whose every mount is *pinned* never meets a change it has not consciously taken on — expensive, and appropriate for content where drift is intolerable.
+An actor whose every mount carries the *never* grain is **write-only**: it contributes, and it never owes anyone a look. That is what lets externalities take a seat (§3.1) — a monitor deposits a price, a forecast; its landings raise debt for whoever mounted that trunk *pinned*; it acknowledges nothing in return because it observes nothing in the substrate's world. It is a full participant on the write path and absent from the read path — an unequal peer, and the books record it as such. At the opposite setting, an actor whose every mount is *pinned* never meets a change it has not consciously taken on — expensive, and appropriate for content where drift is intolerable.
 
 ### **3.7 The record**
 
@@ -193,7 +193,7 @@ Work crosses a trust boundary by landing again — with its own basis and its ow
 - **Downstream — the pull.** When $U$ moves, the fork's side reconciles once: the span $\Delta(U - B)$ lands on $t'$ as one attributable act, minting $U'$. The $M$ workspaces on the fork's side then catch up against $U'$ locally — one reconciliation at the boundary, $M$ cheap ones below, none of them touching $t$.
 - **Upstream — the push, or the proposal.** The fork's chain goes to $t$ as any chain does (§3.4): **push** where $t_{policy}$ grants standing, **propose** where it does not (§5.4). Same work, same gesture — $t_{policy}$ decides how it lands.
 
-**Trust is a write policy.** An unverified party gets the same fork and works normally — everything attributed, everything private to its side — with proposal-only rights upstream. Its work accumulates as a standing proposal, and verification opens the gate the work was waiting at. Nothing to stash, nothing to replay, no second-class mode.
+**Trust is a write policy.** An unverified party gets the same fork and works normally — everything attributed, everything private to its side — with proposal-only rights upstream. Its work accumulates as a standing proposal, and verification opens the gate the work was waiting at. There is nothing to stash or replay, and no second-class mode.
 
 The relation nests: a fork of a fork aggregates its own side's work and reconciles once at each boundary, so a large collaboration integrates in tiers instead of contending on one trunk. Keeping $W$ small becomes an operation on the topology rather than a reorg (§6.4.2).
 

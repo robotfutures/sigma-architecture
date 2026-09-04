@@ -68,7 +68,7 @@ Figure 6.1: Awareness is quadratic. A full mesh of $W(W-1)/2$ pairs, partitioned
 
 The limit this imposes is real: contention is bounded by trunk granularity, so work that genuinely must share a trunk contends, and no partitioning removes that. Finer-grained basis calculation would reduce false positives — cheaper acknowledgments, not a different guarantee — and is the natural extension (§7).
 
-This limit is native to the domain: W writers attending to one another is W(W−1)/2 conversations — Brooks's quadratic, charged against large teams (Brooks, 1975). No design repeals pairwise attention, because that is what collaboration *is*. What the pattern changes is that the cost is measurable — landing rates and debt – and they are partitionable. The old remedy — split the team (keep W small) — is a first-class operation on the topology (§3.8), not a reorg.
+This limit is native to the domain: W writers attending to one another is W(W−1)/2 conversations — Brooks's quadratic, charged against large teams (Brooks, 1975). No design removes pairwise attention, because that is what collaboration *is*. What the pattern changes is that the cost is measurable — landing rates and debt – and they are partitionable. The old remedy — split the team (keep W small) — is a first-class operation on the topology (§3.8), not a reorg.
 
 ## **6.5 Concurrence, not consensus**
 
@@ -95,11 +95,11 @@ Sigma is a pattern driven by many interleaved security concerns (§2, §4), real
 
 ### **6.6.1 Confidentiality**
 
-The mount is the boundary. What is not mounted cannot be read, leaked, or damaged, and a view can be revoked without administrative ceremony (§3.2). Audience-scoped trunks make privacy structural rather than procedural: there are no permission flags. The fork topology extends the same boundary to work in flight — everything on a participant's side is invisible upstream by construction (§3.8). And per constraint 2 (§2), no actor can widen its own entitlement or soften its own gate.
+The mount is the boundary. What is not mounted cannot be read, leaked, or damaged, and a view can be revoked without administrative process (§3.2). Audience-scoped trunks make privacy structural rather than procedural: there are no permission flags. The fork topology extends the same boundary to work in flight — everything on a participant's side is invisible upstream by construction (§3.8). And per constraint 2 (§2), no actor can widen its own entitlement or soften its own gate.
 
 ### **6.6.2 Integrity**
 
-Nothing mutates truth silently: every landing is gated, basis-carried, and attributed (constraints 3, 4, 6). The property is fail-stop (Schlichting & Schneider, 1983) applied to meaning: a failure that halts visibly is worth more than cascading corruption. Auditability (§3.6–3.7) serves non-repudiation — the books answer who landed what, knowing what, on whose behalf; answerability after the fact is half of what makes any assurance real. Tamper-resistance is cheap to layer on through content-addressed history (§5.7), signed commits, and externally anchored heads.
+Nothing mutates truth silently: every landing is gated, basis-carried, and attributed (constraints 3, 4, 6). The property is fail-stop (Schlichting & Schneider, 1983) applied to meaning: a failure that halts visibly is worth more than cascading corruption. Auditability (§3.6–3.7) serves non-repudiation — the books answer who landed what, knowing what, on whose behalf; no assurance holds without answerability after the fact. Tamper-resistance is cheap to layer on through content-addressed history (§5.7), signed commits, and externally anchored heads.
 
 How far a writer is trusted is a granted, graduated, revocable position on the topology (§3.8) — fork, propose, push — thus distrust degrades into more gates. The pattern does not assume inherently good or bad actors; topology details are a deployment and configuration choice.
 

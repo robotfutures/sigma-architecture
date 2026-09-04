@@ -42,7 +42,7 @@ Stated as constraints — the pattern is this list:
 <img alt="Figure 2.3" width="80%" src="./figures/fig-2.3-forces-constraints.png">
 <br/>
 <i>
-Figure 2.3: The constraints set against the forces that demand them (§1.4). Pressures on contributing enter from the left, pressures on seeing from the right. The fan-in is uneven and stays that way: explicit currency answers four forces, provenance as contract answers one.
+Figure 2.3: The constraints set against the forces that demand them (§1.4). Pressures on contributing enter from the left, pressures on seeing from the right. The fan-in is uneven by design: explicit currency answers four forces, provenance as contract answers one.
 </i>
 </p>
 
@@ -51,7 +51,7 @@ Held together, the six yield the **guardrails** §1.3 says the substrate must no
 - **Boundaries** — what a participant can see and touch. What is not reachable cannot be leaked or damaged, and revocation is the withdrawal of a view rather than an appeal to anyone's good behavior. A boundary is a capability, and not only over data: tools arrive as mounts too, so what a participant may *do* and may *see* are one grant (constraints 1–2).
 - **Gates** — whether a contribution lands, and how it is received once it has: reviewed before it enters, or landed in the open as a visible debt that every affected reader owes an acknowledgment (constraints 4–5).
 - **Standing** — what a participant is trusted to do, held as a granted, graduated, revocable position: read, fork, propose, push. Under distrust the structure degrades rather than expels — an untrusted actor is not removed, it simply works behind more gates (constraints 1, 4).
-- **Books** — what is remembered: who contributed what, through which actor, on whose behalf, knowing what. Answerability after the fact is half of what makes any assurance real (constraints 3, 5, 6).
+- **Books** — what is remembered: who contributed what, through which actor, on whose behalf, knowing what. No assurance holds without answerability after the fact (constraints 3, 5, 6).
 
 <p align="center" width="80%">
 <img alt="Figure 2.4" width="90%" src="./figures/fig-2.4-constraints-guardrails.png">
@@ -73,7 +73,7 @@ Figure 2.5: The variation points, held per guardrail. A deployment moves a dial 
 </i>
 </p>
 
-§3 states the model — the cast, the objects, the algebra, the verbs, the gate, the record, and the topologies they compose into — as definitions. §4 grounds the constraints in the forces of §1.4; the argument lives there. The familiar machinery of collaboration — the pull request, suggest-mode, the maintainer hierarchy — reappears as dials on the variation points (§5.4).
+§3 states the model — the cast, the objects, the algebra, the verbs, the gate, the record, and the topologies they compose into — as definitions. §4 grounds the constraints in the forces of §1.4 and makes the argument. The familiar machinery of collaboration — the pull request, suggest-mode, the maintainer hierarchy — reappears as dials on the variation points (§5.4).
 
 ### **2.1 Claims**
 

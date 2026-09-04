@@ -43,7 +43,7 @@ Figure 1.1: Collaboration, redefined. Each party reasons inside its own reality 
 </i>
 </p>
 
-Time and the external world are the third party. They steer both and move underneath the work, consulting neither: weather, locations, prices, external systems, and critically, shifting goals (§3.1). They never reason and never ask; they only write.
+Time and the external world are the third party. They steer both and move underneath the work, without asking either: weather, locations, prices, external systems, and critically, shifting goals (§3.1). They never reason and never ask; they only write.
 
 ## **1.2 Coherence**
 
@@ -57,10 +57,10 @@ Coherence is judged from a view, and views differ — work coherent to its autho
 
 A second axis to the conditions is what a group must do to keep them true: a condition is assessed on the artifact, a **capacity** is something the group either exercises or lacks. Below are seven essential **capacities**, and the failures their absence produce:
 
-1. **Grounding** — establishing and repairing common ground, so evidence can be told from assertion (Clark & Brennan, 1991). Fails as staleness, and as ungrounded material recirculated until it hardens into fact.
+1. **Grounding** — establishing and repairing common ground, so evidence can be told from assertion (Clark & Brennan, 1991). Fails as staleness, and as ungrounded material recirculated until it is accepted as fact.
 2. **Recomposing** — parts produced apart assembling into an artifact that still functions, and still means, as one whole. Not a merge step at the end: dependencies evolve as the parts do, so two contributions can each be right alone and wrong together (Grinter, 2003). Fails as integration debt, surfacing at assembly (Herbsleb et al., 2001).
 3. **Mutual awareness** — each contributor knows what others did that bears on their work (Dourish & Bellotti, 1992). Fails as silent movement.
-4. **Timely reckoning** — what moved is dealt with while the context that produced the work is still warm. Postponed, the same reckoning is performed at low context or not at all — even by its own author.
+4. **Timely reckoning** — what moved is dealt with while the context that produced the work is still available. Postponed, the same reckoning is performed at low context or not at all — even by its own author.
 5. **Attributed judgment** — every consequential decision carries a named owner. Fails as anonymity.
 6. **Rules of engagement** — the group's norms about who may do what are known rather than assumed, so work can be coherent with the social structure and not only with the goal. Fails as ad hoc authority, and as disputes about who decides.
 7. **Accountability** — a name carries consequence, and standing is real. Fails as role and trust erosion.
@@ -69,7 +69,7 @@ The conditions and constraints meet:
 - Grounding (capacity 1) produces grounded premises (condition 2).
 - Recomposing (capacity 2) is where non-contradiction and purpose are held together at once – which is why requirements drift is a recomposition problem.
 - Capacities 3–5 are what make those two possible at all: notice, act while it is still cheap, own the call.
-- Capacities 6-7 knit the social fabric that upholds judgment.
+- Capacities 6-7 maintain the social structure that upholds judgment.
 
 <p align="center" width="80%">
 <img alt="Figure 1.2" width="90%" src="./figures/fig-1.2-coherence.svg">
@@ -79,17 +79,17 @@ Figure 1.2: Coherence and what upholds it. The three conditions are properties o
 </i>
 </p>
 
-These are old problems in a new context. What is new is holding all seven at machine pace, under the forces of §1.4, with agents who are intrinsically unaccountable, for work-products no compiler can check.
+These are old problems; what is new is holding all seven at machine pace, under the forces of §1.4, with agents who are intrinsically unaccountable, for work-products no compiler can check.
 
 ## **1.3 Trust**
 
 Capacities 6 and 7 are the group's — a group either has known rules and real consequence, or it does not. What changes with agents is what has to carry them. Collaboration is social, and social activity runs on **guardrails**: assurances that protect the shared product and make it rational to participate. Violations have real world consequences.
 
-That was acceptable while contributors were human, because whoever misused the bare layer was accountable in person: reputation, sanction, standing. Agents break it. Highly capable and fully unaccountable — no persistent self, nothing to lose, nothing a sanction can grip — they contribute at superhuman volume and pace, and neither rules of engagement or accountability reach them.
+That was acceptable while contributors were human, because whoever misused the bare layer was accountable in person: reputation, sanction, standing. Agents break it. Highly capable and fully unaccountable — no persistent self, nothing to lose, nothing a sanction can reach — they contribute at superhuman volume and pace, and neither rules of engagement or accountability reach them.
 
-The social structure goes missing too, and not for want of writing it down. ACLs, RBAC, etc. Those encode capability over resources — *may you write this file* — and never standing in the work — *does your call settle this question*? That travels the periphery: who decides, who reviews, whose sign-off counts. An agent has no periphery. So a substrate carries not only the data the periphery used to carry but the authority structure with it, which is what makes standing a property of the medium rather than a convention of the team (§3.8).
+The social structure goes missing too, and not because it was never written down. ACLs, RBAC, etc. Those encode capability over resources — *may you write this file* — and never standing in the work — *does your call settle this question*? That travels the periphery: who decides, who reviews, whose sign-off counts. An agent has no periphery. So a substrate carries not only the data the periphery used to carry but the authority structure with it, which is what makes standing a property of the medium rather than a convention of the team (§3.8).
 
-Accountability therefore anchors where it still can: on the **principal**, the party a contribution belongs to — usually a person, sometimes a system, in either case something durable enough to be reached by a consequence (§3.1). The rest must be structural — carried by the substrate rather than asserted around it, through provenance, gates, and traces detailed enough for retroactive accounting (§3.7). This is not the trustless project. Judgment is the content of this work, and no mechanism proves judgment beyond more judgment (§6.7).
+Accountability therefore attaches where it still can: to the **principal**, the party a contribution belongs to — usually a person, sometimes a system, in either case something durable enough to be reached by a consequence (§3.1). The rest must be structural — carried by the substrate rather than asserted around it, through provenance, gates, and traces detailed enough for retroactive accounting (§3.7). This is not the trustless project. Judgment is the content of this work, and no mechanism proves judgment beyond more judgment (§6.7).
 
 ## **1.4 The forces**
 
@@ -97,7 +97,7 @@ The domain has intrinsic pressures against the capabilities which complicate any
 
 1. **Concurrency, volume, and pace.** Actors reason and act in parallel, and a reasoning act is discrete against a world that moves while it runs. Agentic speed and volume accelerate this inherent drift – and accelerate the domain's failure cascade (§1.4.1).
 
-2. **Variable trust and reliability.** Participants are trusted differently and on an evolving continuum. At one end is an agent with no persistent self and nothing a sanction can grip (§1.3). At the other a human with full reputation and authority. Between them are ordinary fallibility cases: an agent steered imperfectly, a human missing a critical detail, hallucination by either.
+2. **Variable trust and reliability.** Participants are trusted differently and on an evolving continuum. At one end is an agent with no persistent self and nothing a sanction can reach (§1.3). At the other a human with full reputation and authority. Between them are ordinary fallibility cases: an agent steered imperfectly, a human missing a critical detail, hallucination by either.
 
 3. **Delegation.** A principal acts through things — apps that do exactly what was clicked, and agents acting on its behalf. The "who" and "how" matters much more now, because intention and execution can be very different.
 
@@ -107,7 +107,7 @@ The domain has intrinsic pressures against the capabilities which complicate any
 
 6. **Bounded attention.** Information saturation degrades human judgment and model reasoning alike. Context clarity is a scarce resource, spent by everything irrelevant that stays in view.
 
-7. **Quadratic awareness.** $W$ collaborators attending to one another is $W(W-1)/2$ pairwise relationships (Brooks, 1975). No design repeals it, leaving only questions of how to manage it toward linearity.
+7. **Quadratic awareness.** $W$ collaborators attending to one another is $W(W-1)/2$ pairwise relationships (Brooks, 1975). No design removes it, leaving only questions of how to manage it toward linearity.
 
 The forces pull against one another: partial visibility argues for narrow views; mutual awareness argues for wide ones; bounded attention argues for less; grounded premises argue for more; etc. There are many almost-Sigma-shaped solutions in the world today which address or ignore these forces to different degrees. Git with Git-forges best approximate a robust solution, but not without gaps, and not as a general purpose solution.
 
@@ -180,7 +180,7 @@ These systems exercise all seven capacities, but they fall short of Sigma: they 
 
 ### **1.5.4 New agent-first entrants**
 
-The spate of resonating entrants point to Sigma's relevance.
+The number of recent entrants working the same forces points to Sigma's relevance.
 
 - Block's **Buzz** (July 2026) unifies chat, forge and agents on one event log. **Addresses** mutual awareness and attributed judgment, against an artifact rather than a feed. **Leaves open** grounding — a log records what happened, not what a contributor reasoned from — nor timely reckoning, and rules of engagement, with approval gates not yet baked (per author).
 - **Cloudflare OS** (August 2026) takes a security-first position: agents start at zero access, resources arrive as typed capability bindings, and opening a gadget is gated on independent entitlement to everything it has read. **Addresses** attributed judgment, rules of engagement and accountability. **Leaves open** mutual awareness (future work, per author) and timely reckoning by design: an unapproved action is *simulated* so the agent may continue, and the human approves in bulk, later.
