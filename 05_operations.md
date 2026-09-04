@@ -24,7 +24,7 @@ It scales from there: a shared truth per audience; a scoped, composed view per a
 
 ## **5.3 Content derivatives**
 
-When every object carries a basis, every change is attributed, and every actor's currency is on the books — then the commit graph becomes a reliable trigger surface. Sigma's VCS patterns allow for CI-style derivative artifacts to be created and served back into the namespace as governed views (§3.2). Pre-commit, the substrate can gate on conformance; post-commit, it can derive — summaries, indexes, embeddings, projections; continuously. We think this active layer — watchers, summarizers, referees living over the trunks — is where the pattern compounds, and it is where our future work points (§7).
+When every object carries a basis, every change is attributed, and every actor's currency is on the books — then the commit graph becomes a reliable trigger surface. Sigma's VCS patterns allow for CI-style derivative artifacts to be created and served back into the namespace as governed views (§3.2). Pre-commit, the substrate can gate on conformance; post-commit, it can derive — summaries, indexes, embeddings, projections; continuously. We think this active layer — watchers, summarizers, referees running over the trunks — is where the pattern compounds, and it is where our future work points (§7).
 
 ## **5.4 Where did the pull request go?**
 
@@ -65,7 +65,7 @@ gitGraph
    commit id: " " tag: "every reader owes an ack on 42"
 ```
 
-Choosing a position is a question of blast radius, and can be enforced by policy. Live, loud, cheaply reverted content wants gate-after: a project under active discussion, where an agent's edit should appear immediately and its principal should edit right on top of it. Durable, quiet, compounding content wants gate-before: an agent proposing long-term memory, where a wrong entry corrupts silently.
+Choosing a position is a question of blast radius, and can be enforced by policy. Live, loud, cheaply reverted content suits gate-after: a project under active discussion, where an agent's edit should appear immediately and its principal should edit right on top of it. Durable, quiet, compounding content suits gate-before: an agent proposing long-term memory, where a wrong entry corrupts silently.
 
 **A gate may refuse, land, or land with notice — never re-target.** Quietly landing the work somewhere narrower than it was offered would survive the write and land silently to its author: constraint 4's silent merge, mirrored onto the write path.
 

@@ -80,7 +80,7 @@ Independently of divergence, a push may also be refused outright by policy — *
 <img alt="Figure 3.2" width="66%" src="./figures/fig-3.2-contested-vs-conflicting.png">
 <br/>
 <i>
-Figure 3.2: Contested against conflicting, from a current basis. Contested is policy — the work still merges, and may land with a disclosure (§5.5); conflicting is mechanics — no determinate result until rebase and resolution. No disclosure reaches indeterminacy.
+Figure 3.2: Contested against conflicting, from a current basis. Contested is policy — the work still merges, and may land with a disclosure (§5.5); conflicting is mechanics — no determinate result until rebase and resolution. No disclosure applies to indeterminacy.
 </i>
 </p>
 
@@ -116,7 +116,7 @@ The chain (§3.2) is a unit: a push lands it squashed as one attributable act, a
 3. **Contested divergence** ($B < U;\ t_{policy}(T) = \text{contested}$) – the change is flagged by trunk policy at the mount's grain. Discharged by rework, or stepped over by a **disclosure** — a writer-supplied, structured note acknowledging the divergence, attached to the act and riding the landing onto the books.
 4. **Conflicting divergence** ($B < U;\ \Delta(U-B) \perp T$) — refused regardless of any disclosure. Discharged only by **resolve** — the indeterminate paths are served as objects in the view, each carrying both sides and the basis, and the resolution is written back in the workspace.
 
-Nothing moves under a refusal, and the basis-to-now delta is served with it. The refusal is recorded as a fact, not a transient failure — $L \overset{+}{\leftarrow} \text{refuse}(\text{ground},\ \Delta(U{-}B))$ — it leaves the writer an obligation in that workspace. The four grounds differ in kind: open debt and a conflict are **facts**; non-conformance is a **prohibition**; contested is a **warning**. The law of the gate follows from the kinds — a disclosure discharges exactly one refusal, the warning: it converts policy's flag into an accepted risk, loud, on the books. It cannot lift a prohibition, conjure a merge, or stand in for an acknowledgment.
+Nothing moves under a refusal, and the basis-to-now delta is served with it. The refusal is recorded as a fact, not a transient failure — $L \overset{+}{\leftarrow} \text{refuse}(\text{ground},\ \Delta(U{-}B))$ — it leaves the writer an obligation in that workspace. The four grounds differ in kind: open debt and a conflict are **facts**; non-conformance is a **prohibition**; contested is a **warning**. The law of the gate follows from the kinds — a disclosure discharges exactly one refusal, the warning: it converts policy's flag into an accepted risk, loud, on the books. It cannot lift a prohibition, produce a merge, or stand in for an acknowledgment.
 
 **The dials.** Two, set by the deployment: the **grain** (§3.3), which decides the granularity that contests; and the **gate position** (§5.4), which decides whether judgment sits ahead of the landing — a proposal — or after it, as every affected reader's debt.
 
@@ -146,13 +146,13 @@ Figure 3.3: Concurrent editors.
 </i>
 </p>
 
-The substrate blocks the TOCTOU race and CAS forces ordering; the late party reconciles a contested or conflicting change. This is the ordinary case: Carlos was doing a job, then the world moved. Doing the job *diligently* means reckoning with the movement before contributing. The substrate does not make Carlos diligent — it makes the reckoning an obligation and keeps receipts.
+The substrate blocks the TOCTOU race and CAS forces ordering; the late party reconciles a contested or conflicting change. This is the ordinary case: Carlos was doing a job, then the world moved. Doing the job *diligently* means reckoning with the movement before contributing. The substrate does not make Carlos diligent — it makes the reckoning an obligation and keeps the record.
 
 ### **3.6 Obligation to the books**
 
 Debt requires an acknowledgment on the ledger; no ledger can force a reader to think, but the acknowledgment establishes a logged claim. When a change lands with known divergence, that claim is logged the same way.
 
-This obligation needs dials – the real world is messy. It is not always possible to attest full knowledge and full understanding, and life must go on — so a qualified statement, a **qualifier**, is legal and recorded: "I am acknowledging this, but I do not fully grok it, so my inbound changes are also qualified." These statements (recorded with an ack or push) convert to two assets: a recorded claim for retrospective audit, or evidence for a policy that blocks a submission and lands it as a proposal instead.
+This obligation needs dials – the real world is messy. It is not always possible to attest full knowledge and full understanding, and life must go on — so a qualified statement, a **qualifier**, is legal and recorded: "I am acknowledging this, but I do not fully grok it, so my inbound changes are also qualified." These statements (recorded with an ack or push) have two uses: a recorded claim for retrospective audit, or evidence for a policy that blocks a submission and lands it as a proposal instead.
 
 The **obligation is a property of the mount, not of the change.** $m_{policy}$ (§3.2) tunes the ledger on two dials: **pinned** (default) vs. **unpinned**, and the grain (§3.3). Unpinned suits mounts that are read-only and ambient — acknowledging their debt would be noise, and the basis moves freely with the view out (a continuous, implicit pull).
 
@@ -237,4 +237,4 @@ The topology above runs vertically. Sibling trunks in one workspace are the hori
 A mount may declare its premises $P \subseteq V$, and the basis becomes a vector $\vec{B} = (B_t)_{t \in P}$ — taken from one consistent read, checked as one predicate at the gate, landed in one transaction.
 
 
-This is a variation point, and it requires atomic commit across the declared refs and a consistent read to take the vector from; trunks declared together share a transaction domain. The deployment sets this, never the actor — an actor declaring its own premises is self-reporting (constraint 2). Independence stays the default because coupling costs: contention returns along the declared edges (§6.4.2). DOORS ships the same conclusion as its **baseline set**: pin the whole relationship or pin nothing (Aragon et al., 2014).
+This is a variation point, and it requires atomic commit across the declared refs and a consistent read to take the vector from; trunks declared together share a transaction domain. The deployment sets this, never the actor — an actor declaring its own premises is self-reporting (constraint 2). Independence stays the default because coupling costs: contention returns along the declared edges (§6.4.2). DOORS reaches the same conclusion in its **baseline set**: pin the whole relationship or pin nothing (Aragon et al., 2014).

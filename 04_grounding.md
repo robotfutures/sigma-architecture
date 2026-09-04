@@ -108,11 +108,11 @@ The responses to the forces look fine and good, but: _does Sigma stem the domain
 
 No.
 
-Nothing can – beyond the collaborators themselves by actively exercising the capacities named in §1.2. What Sigma does is close the gulf between those activities and the work, especially for agents. A Sigma deployment:
+Nothing can – beyond the collaborators themselves by actively exercising the capacities named in §1.2. What Sigma does is close the gap between those activities and the work, especially for agents. A Sigma deployment:
 
 - Encodes structural rules of engagement through audiences, views, and landing authority;
 - Forces timely reckoning by gating suspect work;
 - Delivers mutual awareness as debt and divergence; and,
 - Records attributed judgment for transparency and authenticity.
 
-All of these in support of the continuous recomposing and grounding of the work, by the collaborators through their rendered judgment. Making these activities low cost to effortless and coordinated through a single substrate are what drives the flywheel to align and maintain a coherent body of work.
+All of these in support of the continuous recomposing and grounding of the work, by the collaborators through their rendered judgment. Making these activities low cost to effortless and coordinated through a single substrate is what aligns and maintains a coherent body of work.

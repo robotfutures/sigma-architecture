@@ -4,7 +4,7 @@
 
 **Truth is the reconciled sum of contributions, each carrying the basis it was reasoned from.**
 
-Work happens in **workspaces**, against composed **views** of shared, audience-scoped histories — **trunks** (§3.2). Inter-actor collaboration is through the substrate – with trunks serving as coordination channels, as well as spaces for private or shared work artifacts. Externalities mirror in and out via monitors and effectors, also contributing to, and driven off, shared trunks within scoped workspaces. All accounted for.
+Work happens in **workspaces**, against composed **views** of shared, audience-scoped histories — **trunks** (§3.2). Inter-actor collaboration is through the substrate – with trunks serving as coordination channels, as well as spaces for private or shared work artifacts. Externalities mirror in and out via monitors and effectors, also contributing to, and driven off, shared trunks within scoped workspaces, all accounted for.
 
 <p align="center" width="80%">
 <img alt="Figure 2.1" width="60%" src="./figures/fig-2.1-collaboration-on-sigma.png">
@@ -15,7 +15,7 @@ Figure 2.1: Collaboration on a Sigma substrate. Every party attaches to trunks v
 </p>
 
 
-Views flow out; work accumulates against them freely, scoped to individual workspaces — edits are cheap, never interrupted by the world or peers moving. Reconciliation is owed only at the boundaries: when work is offered back, or when a view deliberately catches up. The offer carries its **basis** — *here is my work, and here is what I knew when I did it* — and truth advances only through an explicit, attributable act (§3.5). That is the whole loop:
+Views flow out; work accumulates against them freely, scoped to individual workspaces — edits are cheap, never interrupted by the world or peers moving. Reconciliation is owed only at the boundaries: when work is offered back, or when a view deliberately catches up. The offer carries its **basis** — *here is my work, and here is what I knew when I did it* — and truth advances only through an explicit, attributable act (§3.5). The loop:
 
 **view out → reason → contribute against basis → reconcile → truth advances → views update.**
 

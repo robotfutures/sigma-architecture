@@ -43,7 +43,7 @@ Figure 1.1: Collaboration, redefined. Each party reasons inside its own reality 
 </i>
 </p>
 
-Time and the external world are the third party. They steer both and move underneath the work, consulting neither: weather, locations, prices, external systems, and critically, shifting goals (§3.1). They never reason and never ask. They only write.
+Time and the external world are the third party. They steer both and move underneath the work, consulting neither: weather, locations, prices, external systems, and critically, shifting goals (§3.1). They never reason and never ask; they only write.
 
 ## **1.2 Coherence**
 
@@ -53,7 +53,7 @@ Coherence here is the linguistic sense — a continuity across the whole (de Bea
 2. **Grounded premises** — the premises each part rests on still hold.
 3. **Purpose** — the goals it serves have not moved.
 
-Coherence is judged from a view, and views differ — work coherent to its author can be incoherent to a judge who sees otherwise. It is assessed, and thus "by whom" is a first class concern. Observe that Sigma cannot deliver coherence itself. As REST is to cacheability (Fielding, 2000) — it does not guarantee caching; it provides a deliberate path to it — so Sigma is to coherence.
+Coherence is judged from a view, and views differ — work coherent to its author can be incoherent to a judge who sees otherwise. It is assessed, and thus "by whom" is a first class concern. Sigma cannot deliver coherence itself. As REST is to cacheability (Fielding, 2000) — it does not deliver caching; it provides a deliberate path to it — so Sigma is to coherence.
 
 A second axis to the conditions is what a group must do to keep them true: a condition is assessed on the artifact, a **capacity** is something the group either exercises or lacks. Below are seven essential **capacities**, and the failures their absence produce:
 
@@ -156,9 +156,9 @@ Every medium of collaboration in use today answers some of the forces. None answ
 
 ### **1.5.1 Shared editors and version control**
 
-The **shared editor** — Google Docs, and the OT/CRDT family of algorithms beneath it — addresses mutual awareness and timely reckoning outright: every keystroke is visible in realtime, or in local-first designs, these are algorithmically merged at a later time. Here is a gap: asynchronous awareness is unaddressed, and merging in this fashion misses clean-but-incoherent, even when direct conflict is preserved (§6.4.1).
+The **shared editor** — Google Docs, and the OT/CRDT family of algorithms beneath it — addresses mutual awareness and timely reckoning outright: every keystroke is visible in realtime, or in local-first designs, these are algorithmically merged at a later time. The gap: asynchronous awareness is unaddressed, and merging in this fashion misses clean-but-incoherent, even when direct conflict is preserved (§6.4.1).
 
-**Version control** — git and its kin. This addresses grounding exactly: every commit names the state it was made from, durably and by construction. It addresses recomposing through mechanical three-way merge, which surfaces conflict rather than dissolving it, and hands the judgment to a person. What it leaves open, it leaves open by design: non-mechanical conflicts, mutual awareness.
+**Version control** — git and its kin. This addresses grounding exactly: every commit names the state it was made from, durably and by construction. It addresses recomposing through mechanical three-way merge, which surfaces conflict rather than dissolving it, and hands the judgment to a person. It leaves non-mechanical conflicts and mutual awareness open by design.
 
 ### **1.5.2 The Git ecosystem**
 
@@ -166,7 +166,7 @@ The forge — git + GitHub/GitLab/etc – support five of the seven capacities: 
 
 On the periphery there are tools that extend git, like [josh](https://github.com/josh-project/josh), which proxies monorepos to respond to the forces of partial visibility and bounded attention.
 
-Git and its ecosystem's acknowledged strengths are why Sigma's vocabulary rhymes deliberately. As a pattern, Sigma points to *how to balance the forces of collaboration*, without committing to an exact domain subject.
+Git and its ecosystem's acknowledged strengths are why Sigma's vocabulary deliberately resembles theirs. As a pattern, Sigma points to *how to balance the forces of collaboration*, without committing to an exact domain subject.
 
 ### **1.5.3 Products for regulated industries**
 

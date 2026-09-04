@@ -6,7 +6,7 @@
 
 §1 states the claim; §3 the model; §4 has run the removal tests force by force, so the result can now be itemised by constraint. Remove the basis and reasoning is lost to retries. Remove composed views and attention and security collapse to the repository grain. Remove the ledger and absorbed drift goes unreckoned at machine pace. Remove adjudication and merges silently corrupt. Remove audience scoping and the fork topology — privacy included — is inexpressible. Remove the provenance contract and no policy can tell a click from an inference.
 
-So the pattern falls in one move: exhibit a deployment that drops a constraint and loses nothing, or a substrate that holds all six and still absorbs a contribution its author never reckoned with.
+To falsify the pattern: exhibit a deployment that drops a constraint and loses nothing, or a substrate that holds all six and still absorbs a contribution its author never reckoned with.
 
 ## **6.2 What Sigma is not**
 
@@ -83,7 +83,7 @@ There are two reasons for refusing consensus.
 
 First: **there is nothing a vote can verify.**
 
-In consensus, the vote is a verification instrument: every honest validator computes the same deterministic check — agree on the rules, agree on the content — so the tally exposes the faulty. Nothing prevents polling a panel on a contribution; the question is what the tally would mean. A work-product's validity is not a predicate fixed in advance — it is the collaborators' own evolving judgment — and honest judges may disagree with none of them wrong. That is the background problem wearing a quorum's clothes: validity rests on shared practice no validator can recompute from the artifact alone (Winograd & Flores, 1986). A tally would then measure the panel, not the contribution: N opinions, averaged, with the names removed. A merge rule deterministic enough for a quorum to verify would make Sigma unnecessary; where Sigma is necessary, the quorum has nothing to recompute.
+In consensus, the vote is a verification instrument: every honest validator computes the same deterministic check — agree on the rules, agree on the content — so the tally exposes the faulty. Nothing prevents polling a panel on a contribution; the question is what the tally would mean. A work-product's validity is not a predicate fixed in advance — it is the collaborators' own evolving judgment — and honest judges may disagree with none of them wrong. That is the background problem in quorum form: validity rests on shared practice no validator can recompute from the artifact alone (Winograd & Flores, 1986). A tally would then measure the panel, not the contribution: N opinions, averaged, with the names removed. A merge rule deterministic enough for a quorum to verify would make Sigma unnecessary; where Sigma is necessary, the quorum has nothing to recompute.
 
 The second is on security grounds: **third-party validators may not look.**
 
