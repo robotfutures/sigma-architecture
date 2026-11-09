@@ -49,6 +49,8 @@ The association between an agent and their principal makes transparent critical 
 
 In regulated industries, ALCOA requires a regulated record — *attributable*, *legible*, *contemporaneous*, *original*, *accurate*. These can only be provided by a substrate (§3.7) – as compared to a system like git where attribution is client-supplied.
 
+A principal's claim to have seen an object, or to stand behind a version of it with a stated meaning, is accepted from the principal itself, and from a delegate only under a grant the principal issued, which the record then shows (§3.9.3). An electronic signature under 21 CFR Part 11 is such a claim: unique to one individual, bound to one version of the record, carrying its meaning and its time, and executed with authentication at the act. The attestation of §3.9 carries all four, with the authentication as the evidence the deployment's rule for that meaning demands, and the exclusion of delegates is a property of the act rather than a rule about agents.
+
 ### **4.4 Partial visibility (force 4 → constraints 1, 2)**
 
 Privacy law and security dictate that no single actor sees everything. Audience-scoped truth and composed views answer the force by making the boundary the shape of the data itself.
@@ -68,7 +70,7 @@ As compared to the forge, the boundary there is the repository — partition *or
 
 Humans coordinate through a periphery of informal channels. An agent has none, only those engineered. The periphery has a second defect: it kept no records. Composed views and explicit currency answer both halves: the channels are trunks, and the awareness is divergence and debt, with debt acknowledgement accounted (§3.2, §3.6). While humans still maintain a periphery, the awareness channels close the gap to those not in reach.
 
-Thus, "did the actor know about the new budget?" is a query — $H$ against the fact, per workspace. Every premise an agent holds is a premise some mount served: nameable, owned, auditable.
+Thus, "did the actor know about the new budget?" is a query — $H$ against the fact, per workspace. Every premise an agent holds is a premise some mount served: nameable, owned, auditable. For a person the same question is asked of the receipt ledger: was the budget served to them, did they mark it seen, did they attest to it, and at which version (§3.9).
 
 Side-channels (context and content flowing in and out, outside the view) outside Sigma's trunks are liabilities to the integrity of the process (having no accountability). To close this:
 
@@ -85,6 +87,7 @@ The cost model, per attention act:
 - **Am I current:** $O(1)$ per trunk — the comparison $H = B$, however large the world has grown (§3.3).
 - **Catch up:** $O(|\Delta|)$ — the windows $H..B$ and $B..U$ served as deltas, costing the net change.
 - **Discharge:** per trunk, on the actor's schedule, qualified where understanding is partial (§3.4, §3.6) — on the actor's consumption schedule.
+- **What is new to me:** $O(|\mathrm{dom}(R_p)|)$ for a principal — one comparison per item in its exposure (§3.9.2).
 
 Every attention cost is bounded by something the deployment chooses — $|V|$, the net delta — and none by the size of the world or the rate at which it produces events. In this regard, Sigma presents like an event-sourcing model, with changes collapsed in $V$ to the final state. If the actor needs the evolution, this is available looking at history over $H..B$, first with metadata, then per object.
 

@@ -35,7 +35,7 @@ Stated as constraints — the pattern is this list:
 2. **Composed views.** Every actor reads and writes through a view: a scoped, policy-bearing composition of mounts on the trunks it is entitled to (§3.2). Both the entitlement and the policy are external to the actor's working surface.
 3. **Basis-carried contribution.** Every push declares the basis it was reasoned from (§3.3). The write is a transaction: work plus premises. Where premises span trunks, so does the basis — what is reasoned about together is pinned together (§3.8).
 4. **Adjudicated reconciliation.** A divergent contribution meets the gate (§3.5): the basis-to-now delta is served, nothing merges silently, and truth advances only through an explicit, attributed act.
-5. **Explicit currency.** The books hold, per workspace and trunk, a high-water mark of what each actor has acknowledged (§3.3). Currency is never the default state, checked in constant time, and only an acknowledgment moves it (§3.4).
+5. **Explicit currency.** The books hold, per workspace and trunk, a high-water mark of what each actor has acknowledged (§3.3); and, per principal and item, what each principal was served, has marked seen, and has attested (§3.9). Currency is never the default state, checked in constant time, and only an explicit act moves it (§3.4): an acknowledgment for a workspace, a mark or an attestation for a principal.
 6. **Provenance as contract.** Every landing records the principal, the acting agent, the workspace, and the basis (§3.7) — asserted by the substrate, consumed by its own machinery.
 
 <p align="center" width="80%">

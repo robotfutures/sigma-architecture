@@ -164,6 +164,25 @@
             belief-revision and git-shaped machinery.},
 }
 
+@misc{blockbuzz2026,
+      title={Buzz: The Relay Is the Workspace},
+      author={{Block, Inc.}},
+      year={2026},
+      howpublished={Source repository with vision and protocol documents (Apache-2.0); announced July 2026},
+      url={https://github.com/block/buzz/blob/main/VISION.md},
+      note={Repo survey 2026-09-05 at HEAD f038cbb (2026-09-04).},
+}
+
+@misc{karayev2026multiplayer,
+      title={The Multiplayer AI Manifesto},
+      author={Sergey Karayev and {Superconductor}},
+      year={2026},
+      month={sep},
+      howpublished={Web, multiplayer-ai.com (full text at /llms-full.txt)},
+      url={https://multiplayer-ai.com/},
+      note={Web survey 2026-09-05. Names the category and quotes the YC Fall 2026 RFS "Multiplayer AI".},
+}
+
 % ---------------------------------------------------------------
 % Foils (§3.3, §5.2 matrix rows)
 % ---------------------------------------------------------------
@@ -295,6 +314,64 @@
             reviewer presses: it is held per link rather than per reader, so it answers "has
             this pair been re-examined" and not "has THIS actor reckoned with what moved"; and
             it lives in an application, so it does not survive the work leaving the tool.},
+}
+
+@misc{euannex11draft2025,
+      title={EudraLex Volume 4, Annex 11: Computerised Systems — draft revision for public consultation},
+      author={{European Commission, Directorate-General for Health and Food Safety}},
+      year={2025},
+      howpublished={Consultation text, 7 July to 7 October 2025},
+      url={https://health.ec.europa.eu/consultations/stakeholders-consultation-eudralex-volume-4-good-manufacturing-practice-guidelines-chapter-4-annex_en},
+      note={Cited for §3.9: §13.8 accepts, as the form of the signature-record link, that
+            "if a later change is made to a signed record, it will clearly appear as unsigned"
+            — the stale condition on an attestation, stated as a regulatory requirement. §13.3
+            requires re-authentication at each signature, which is the evidence rule for the
+            Part 11 meaning in §3.9.3 and §5.6. §12.2 asks the audit trail to record the role
+            when a user holds several, which is why meaning rides on the attestation and not on
+            the binding. Draft; adoption not confirmed at the time of citation.},
+}
+
+@misc{matrixmsc3771,
+      title={MSC3771: Read receipts for threads},
+      author={Patrick Cloke},
+      year={2022},
+      howpublished={Matrix Spec Change proposal, merged},
+      url={https://github.com/matrix-org/matrix-spec-proposals/blob/main/proposals/3771-read-receipts-for-threads.md},
+      note={Precedent for §3.9: a per-room read receipt "causes missed (or flaky) notification
+            counts" once a room holds several threads, and the repair is a receipt per thread,
+            each a frontier over that thread's events. The item of §3.9.1 is the thread here;
+            Matrix kept frontier semantics per sub-conversation rather than per-event flags,
+            which is the shape $R_{p,i}$ takes. What Matrix does not have is the split this
+            paper makes between a reader's receipt and a writer's obligation; its receipt
+            serves both roles.},
+}
+
+@misc{githubnotifications,
+      title={GitHub REST API: Activity — Notifications},
+      author={{GitHub}},
+      howpublished={API documentation},
+      url={https://docs.github.com/en/rest/activity/notifications},
+      note={Precedent for §3.9.2 and §3.9.3: one row per thread with a reason it is there
+            (review requested, mention, state change); mark-as-read and mark-as-done per thread;
+            a bulk mark-read up to a time; subscription separate from both. None of these gates
+            a merge. The purview, the address, the *seen* and *done* dispositions and the rule
+            that notice gates nothing are this shape, moved into the substrate and keyed by
+            principal rather than by application account.},
+}
+
+@misc{google2026ap2,
+      title={Agent Payments Protocol (AP2) Specification},
+      author={{Google}},
+      year={2026},
+      howpublished={Open specification, v0.2},
+      url={https://github.com/google-agentic-commerce/AP2},
+      note={Cited in §3.9.3 as the shape of a delegated act under a grant: a user's signed
+            mandate authorizes an agent to act for them, bounded (open) or bound to one
+            transaction (closed), and the transaction record carries the mandate so the act is
+            attributable to the agent under the user's authority. The owner's ruling on PR
+            #1745 keeps the notice ledger open to a delegated mark or attestation under such
+            a grant, recorded as delegated; the default is refusal, and a regulated evidence
+            rule is never satisfied by a grant. sigma-ref #634 is the standing comparison.},
 }
 
 @techreport{aragon2014doors,

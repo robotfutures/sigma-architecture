@@ -4,7 +4,7 @@
 
 ## **6.1 The removal test**
 
-§1 states the claim; §3 the model; §4 has run the removal tests force by force, so the result can now be itemised by constraint. Remove the basis and reasoning is lost to retries. Remove composed views and attention and security collapse to the repository grain. Remove the ledger and absorbed drift goes unreckoned at machine pace. Remove adjudication and merges silently corrupt. Remove audience scoping and the fork topology — privacy included — is inexpressible. Remove the provenance contract and no policy can tell a click from an inference.
+§1 states the claim; §3 the model; §4 has run the removal tests force by force, so the result can now be itemised by constraint. Remove the basis and reasoning is lost to retries. Remove composed views and attention and security collapse to the repository grain. Remove the ledger and absorbed drift goes unreckoned at machine pace. Remove adjudication and merges silently corrupt. Remove audience scoping and the fork topology — privacy included — is inexpressible. Remove the provenance contract and no policy can tell a click from an inference. Remove the receipt ledger and every application rebuilds per-reader state beside the substrate, and a regulated acknowledgment of a document at a version is recorded by the application alone.
 
 To falsify the pattern: exhibit a deployment that drops a constraint and loses nothing, or a substrate that holds all six and still absorbs a contribution its author never reckoned with.
 
